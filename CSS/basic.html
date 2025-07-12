@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 連結外部樣式(html) -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* 引入外部樣式(css) */
+        @import url('style.css');
+
+        .green {
+            color:rgb(9, 255, 34);
+        }
+        h1 {
+            color: pink!important;
+        }
+        #yellow {
+            color: yellow;
+        }
+        .aaa {
+            color: red;
+        }
+        .bbb {
+            color: greenyellow;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="yellow" class="green" style="color: orange;">CSS Cascading Style Sheet <small>串接樣式表</small></h1>
+    <h2>分類</h2>
+    <ul>
+        <li style="color: rgb(38, 122, 232);">嵌入式樣式</li>
+        <li class="green">內部樣式</li>
+        <li class="red">外部樣式</li>
+    </ul>
+    <h2>基本選取器</h2>
+    <ul>
+        <li class="aaa bbb">標籤 Tag</li>
+        <li>類別 Class</li>
+        <li>ID</li>
+    </ul>
+    <h2>權重</h2>
+    <p>
+        當樣式的影響範圍愈小，權重愈重，愈優先套用
+    </p>
+    <p>
+        !important > 嵌入式 > id > class > tag
+    </p>
+    <p>
+        當權重相同時，判斷寫的順序，後寫的優先套用
+    </p>
+</body>
+</html>

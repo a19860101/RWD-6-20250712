@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="name">姓名</label>
+        <input type="text" id="name" name="name" placeholder="請輸入中文姓名" required>
+        <br>
+        <label for="email">email</label>
+        <input type="email" id="email" name="email" placeholder="請輸入email">
+        <br>
+        <label for="pw">password</label>
+        <input type="password" id="pw" name="pw">
+        <br>
+        <label for="date">日期</label>
+        <input type="date" id="date" name="date">
+        <br>
+        <label for="qty">數量</label>
+        <input type="number" id="qty" name="qty" max="3" min="1">
+        <br>
+        <label for="gender">性別</label>
+
+        <input type="radio" id="male" name="gender" value="男">
+        <label for="male">男</label>
+
+        <input type="radio" id="female" name="gender" value="女">
+        <label for="female">女</label>
+        <br>
+        <label for="skill">專長</label>
+
+        <input type="checkbox" id="design" name="skill" value="平面設計">
+        <label for="design">平面設計</label>
+
+        <input type="checkbox" id="web" name="skill" value="網頁設計">
+        <label for="web">網頁設計</label>
+        <br>
+
+        <label for="edu">學歷</label>
+        <select name="edu" id="edu">
+            <option value="國小">國小</option>
+            <option value="國中">國中</option>
+            <option value="高中職">高中職</option>
+            <option value="大專院校">大專院校</option>
+            <option value="研究所以上">研究所以上</option>
+        </select>
+        <br>
+        <label for="comment">備註</label>
+        <textarea name="comment" id="comment" rows="8" cols="30"></textarea>
+        <br>
+        <input type="submit" value="送出">
+        <input type="reset" value="清除">
+        <input type="button" value="自定義">
+    </form>
+</body>
+</html>
