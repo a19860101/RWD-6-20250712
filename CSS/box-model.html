@@ -5,10 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
         .box {
             background-color: #ccc;
             text-align: justify;
 
+            /* box-sizing: border-box; */
+            display: block;
             width: 200px;
             /* min-width: 200px; */
             /* max-width: 600px; */
@@ -20,7 +25,7 @@
             /* auto, hidden, scroll, visible */
 
             /* 內距 */
-            /* padding: 30px;*/
+            padding: 10px;
             /* padding-left: 30px; */
             /* padding-right: 0; */
             /* padding-top: 100px; */
@@ -44,10 +49,10 @@
             /* 上右下左 順時針 */
 
             /* 外距 */
-            margin: 20px;
+            /* margin: 20px; */
 
-            /* margin-left: ; */
-            /* margin-right: ; */
+            /* margin-left: auto; */
+            /* margin-right: auto; */
             /* margin-top: ; */
             /* margin-bottom: ; */
 
@@ -55,11 +60,11 @@
             /* margin-block-start:; */
             /* margin-block-end:; */
 
-            /* margin-inline:; */
+            margin-inline: auto;
             /* margin-inline-start: ; */
             /* margin-inline-end:; */
 
-            border: 10px solid #fa0
+            border: 5px solid #fa0
 
             /* border-color:pink; */
             /* border-width:12px; */
@@ -87,9 +92,20 @@
             border-right-style:;
             border-right-width:; */
         }
+        /* 
+            預設狀態下
+            總寬度 = width + border + padding
+        */
+        /* 
+        
+            行內元素:沒有width, height,上下margin,padding
+        */
     </style>
 </head>
 <body>
+    <span class="box">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint qui eos esse a tenetur animi dolore soluta voluptate nostrum nisi alias ratione vel, harum ullam perspiciatis quaerat ipsum assumenda laborum.
+    </span>
     <div class="box">
         <h2>title</h2>
         <p>
