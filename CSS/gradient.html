@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .g1 {
+            width: 200px;
+            height: 200px;
+            background-color: #ccc;
+            /* background-image: 
+                linear-gradient(red 50%, transparent 50%),
+                linear-gradient(90deg,blue 50%, transparent 50%); */
+
+            background-image: 
+                linear-gradient(#777000a0, #000000b2),
+                url('https://picsum.photos/200/200')
+            ;
+        }
+        .g2 {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            /* background-image: radial-gradient(red, blue); */
+            /* background-image:
+                radial-gradient(circle at left top,red 100px, transparent 100px),
+                radial-gradient(circle at left bottom,red 100px, transparent 100px),
+                radial-gradient(circle at right top,red 100px, transparent 100px),
+                radial-gradient(circle at right bottom,red 100px, transparent 100px)
+            ; */
+
+            background-image: 
+                radial-gradient(#777 20px, #fff 20px,
+                                #fff 40px, #777 40px, 
+                                #777 60px, #fff 60px,
+                                #fff 80px, #777 80px,
+                                #777 100px, #fff 100px
+                                )
+        }
+        .g3 {
+            width: 200px;
+            height: 200px;
+            /* background-image: 
+                conic-gradient(red,orange, yellow,green, blue,purple); */
+            /* background-image:
+                conic-gradient(
+                            red 12.5%, 
+                            orange 12.5%,orange 25%,
+                            yellow 25%, yellow 37.5%,
+                            green 37.5%, green 50%,
+                            blue 50%, blue 62.5%,
+                            purple 62.5%, purple 75%,
+                            #00805e 75%, #00805e 87.5%,
+                            #fe9114 87.5%, #fe9114 100%
+                            )   
+                ; */
+           
+            background-image: 
+                conic-gradient(red 120deg, blue 120deg, blue 240deg, yellow 240deg);
+            border-radius: 50%;
+            }
+        /* body {
+            background-image: 
+                radial-gradient(circle at center,#777 20px, #fff 20px,
+                                #fff 40px, #777 40px, 
+                                #777 60px, #fff 60px,
+                                #fff 80px, #777 80px,
+                                #777 100px, #fff 100px
+                                );
+            background-size: 150px 150px;
+            
+        } */
+        .pattern {
+            width: 600px;
+            height: 600px;
+            background-color: #e5e5f7;
+        }
+    </style>
+</head>
+<body>
+    <div class="g1"></div>
+    <div class="g2"></div>
+    <div class="g3"></div>
+    <div class="pattern"></div>
+
+    <!-- 
+        pattern參考
+        
+        https://www.magicpattern.design/tools/css-backgrounds
+        https://projects.verou.me/css3patterns/
+    -->
+</body>
+</html>
