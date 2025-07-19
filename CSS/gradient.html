@@ -71,10 +71,22 @@
             background-size: 150px 150px;
             
         } */
-        .pattern {
-            width: 600px;
-            height: 600px;
-            background-color: #e5e5f7;
+        .g4 {
+            width: 200px;
+            height: 200px;
+            background-color: #fffd6b;
+
+            /* background-image:
+                repeating-linear-gradient(red 0,red 10px,pink 10px , pink 20px) */
+
+            /* background-image:
+                repeating-linear-gradient(transparent 0,transparent 10px,rgba(255, 192, 203, 0.7) 10px , rgba(255, 192, 203, 0.7) 20px),
+                repeating-linear-gradient(90deg,transparent 0,transparent 10px,#748DAE 10px , #748DAE 20px) */
+        
+        
+            background-image: 
+                repeating-radial-gradient(circle at left top,transparent 0px, transparent 10px, skyblue 10px, skyblue 20px),
+                repeating-radial-gradient(circle at right top,pink 0px, pink 10px, transparent 10px, transparent 20px);
         }
     </style>
 </head>
@@ -82,7 +94,7 @@
     <div class="g1"></div>
     <div class="g2"></div>
     <div class="g3"></div>
-    <div class="pattern"></div>
+    <div class="g4"></div>
 
     <!-- 
         pattern參考
