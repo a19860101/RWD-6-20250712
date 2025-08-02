@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            width: 960px;
+            margin-inline: auto;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+        .col {
+            display: flex;
+            flex-direction: column;
+            background-color: #ddd;
+
+        }
+        img {
+            width: 100%;
+        }
+        .content {
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="col">
+            <div class="cover">
+                <img src="https://picsum.photos/id/32/400" alt="">
+            </div>
+            <div class="content">
+                <h3>title</h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+                <a href="#">link</a>
+            </div>
+        </div>
+        <div class="col">
+            <div class="cover">
+                <img src="https://picsum.photos/id/32/400" alt="">
+            </div>
+            <div class="content">
+                <h3>title</h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+                <a href="#">link</a>
+            </div>
+        </div>
+        <div class="col">
+            <div class="cover">
+                <img src="https://picsum.photos/id/32/400" alt="">
+            </div>
+            <div class="content">
+                <h3>title</h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+                <a href="#">link</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
