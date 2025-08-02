@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            background-color: #ffd344;
+            padding-block: 15px;
+
+            display: flex;
+            justify-content: space-around;
+            /* 
+                start, center, end,
+                space-between, space-evenly, space-around
+            */
+        }
+        .container {
+            width: 600px;
+            height: 400px;
+            margin-inline: auto;
+            background-color: #fdbbcd;
+
+            display: flex;
+            flex-direction: column;
+
+            align-items: center;
+            /* justify-content: center; */
+
+        } 
+        .container > * {
+            background-color: skyblue;
+        }
+        .container > div {
+            width: 50%;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+        <a href="#">Link 4</a>
+        <a href="#">Link 5</a>
+    </nav>
+    <div class="container">
+        <div>
+            <h2>HELLO</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates harum dolores pariatur voluptas magni nam, quis, ab quos, ad rem mollitia suscipit culpa doloremque enim. Optio eveniet voluptatibus sed nisi.</p>
+            <a href="#">LINK</a>
+        </div>
+    </div>
+</body>
+</html>

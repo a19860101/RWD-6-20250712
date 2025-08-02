@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .container {
+            width: 900px;
+            margin-inline: auto;
+            background-color: #ddd;
+
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+
+            /* gap: 30px; */
+        }
+        .col {
+            /* width: 290px; */
+            /* width: calc((900px - (30px*2)) / 3); */
+            /* 900 - (15*2) / 3 */
+            
+            width: calc(900px / 4);
+            /* padding: 15px; */
+        }
+        /* .col:not(:nth-of-type(3n)){
+            background-color: #fa0;
+            padding-right: 30px;
+        }
+        .col:nth-of-type(3n){
+            padding-left: 30px;
+        } */
+        
+        /* .col:not(:first-of-type):not(:last-of-type){
+            background-color: #fa0;
+            padding: 15px;
+        }
+        .col:first-of-type {
+            padding-right: 15px;
+        }
+        .col:last-of-type {
+            padding-left: 15px;
+        } */
+        
+        .col:nth-of-type(4n+1){
+            background-color: #fa0;
+            /* padding-left: 15px; */
+        }
+        .col:nth-of-type(4n){
+            background-color: #f09;
+            /* padding-right: 15px; */
+        }
+        .col:not(:nth-of-type(4n)):not(:nth-of-type(4n+1)){
+            background-color: #098;
+            /* padding-inline: 15px; */
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="col">
+            <h2>title 1</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos voluptatibus nihil ut! Officia perferendis ipsa distinctio, ipsam cum sit quae eveniet, nisi eius, voluptates molestias optio similique nemo et fugiat.
+            </p>
+        </div>
+        <div class="col">
+            <h2>title 2</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos voluptatibus nihil ut! Officia perferendis ipsa distinctio, ipsam cum sit quae eveniet, nisi eius, voluptates molestias optio similique nemo et fugiat.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos voluptatibus nihil ut! Officia perferendis ipsa distinctio, ipsam cum sit quae eveniet, nisi eius, voluptates molestias optio similique nemo et fugiat.
+            </p>
+        </div>
+        <div class="col">
+            <h2>title 3</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos voluptatibus nihil ut! Officia perferendis ipsa distinctio, ipsam cum sit quae eveniet, nisi eius, voluptates molestias optio similique nemo et fugiat.
+            </p>
+        </div>
+        <div class="col">
+            <h2>title 4</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos voluptatibus nihil ut! Officia perferendis ipsa distinctio, ipsam cum sit quae eveniet, nisi eius, voluptates molestias optio similique nemo et fugiat.
+            </p>
+        </div>
+        <div class="col">
+            <h2>title 5</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos voluptatibus nihil ut! Officia perferendis ipsa distinctio, ipsam cum sit quae eveniet, nisi eius, voluptates molestias optio similique nemo et fugiat.
+            </p>
+        </div>
+        <div class="col">
+            <h2>title 6</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos voluptatibus nihil ut! Officia perferendis ipsa distinctio, ipsam cum sit quae eveniet, nisi eius, voluptates molestias optio similique nemo et fugiat.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

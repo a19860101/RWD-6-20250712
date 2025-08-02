@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            width: 960px;
+            margin-inline: auto;
+            background-color: #fa0;
+            padding: 20px 15px;
+
+            display: flex;
+            justify-content: space-between;
+            
+            a {
+                color: #000;
+                text-decoration: none;
+            }
+            .nav-menu {
+                display: flex;
+                gap: 30px;
+            }
+        }
+        .container {
+            width: 960px;
+            margin-inline: auto;
+            .row {
+
+                display: flex;
+                /* margin-inline: -15px; */
+                text-align: justify;
+                background-color: #ccc;
+            }
+
+            .col {
+                width: calc(100% / 3);
+                padding: 15px;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#">LOGO</a>
+        <div class="nav-menu">
+            <a href="#" class="nav-link">Link</a>
+            <a href="#" class="nav-link">Link</a>
+            <a href="#" class="nav-link">Link</a>
+            <a href="#" class="nav-link">Link</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2>title</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis ducimus saepe suscipit, earum fugit delectus adipisci ipsam eum natus, maxime possimus id laborum doloribus deserunt architecto exercitationem similique impedit molestiae?
+                </p>
+            </div>
+            <div class="col">
+                <h2>title</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis ducimus saepe suscipit, earum fugit delectus adipisci ipsam eum natus, maxime possimus id laborum doloribus deserunt architecto exercitationem similique impedit molestiae?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis ducimus saepe suscipit, earum fugit delectus adipisci ipsam eum natus, maxime possimus id laborum doloribus deserunt architecto exercitationem similique impedit molestiae?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis ducimus saepe suscipit, earum fugit delectus adipisci ipsam eum natus, maxime possimus id laborum doloribus deserunt architecto exercitationem similique impedit molestiae?
+                </p>
+            </div>
+            <div class="col">
+                <h2>title</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis ducimus saepe suscipit, earum fugit delectus adipisci ipsam eum natus, maxime possimus id laborum doloribus deserunt architecto exercitationem similique impedit molestiae?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis ducimus saepe suscipit, earum fugit delectus adipisci ipsam eum natus, maxime possimus id laborum doloribus deserunt architecto exercitationem similique impedit molestiae?
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

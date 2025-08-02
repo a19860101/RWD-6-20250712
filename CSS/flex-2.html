@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .container {
+            width: 1000px;
+            margin-inline: auto;
+
+            display: flex;
+            align-items: stretch;
+            /* start, center, end, stretch */
+        }
+        .col {
+            width: 50%;
+
+            background-color: #f44;
+
+            display: flex;
+            flex-direction: column;
+        }
+        a {
+            margin-left: auto;
+            margin-top: auto;
+            margin-right: 30px;
+            margin-bottom: 30px;
+        }
+        img {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="col">
+            <h2>title</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non, sapiente autem soluta eveniet officia dolorem.
+            </p>
+            <a href="#">Link</a>
+        </div>
+        <div class="col">
+            <img src="https://picsum.photos/id/33/600" alt="">
+             <!-- <h2>title</h2>
+             <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt recusandae commodi iure aperiam eius enim at cum molestias sapiente ipsam, debitis aliquid consectetur soluta eaque voluptates sint illum possimus eum animi ab ipsum voluptatibus voluptatum. Harum aperiam dolore quia. Est dolor, tempore voluptates facere modi qui nihil delectus molestias magnam dolorum voluptate vel atque dolorem repellendus! Autem sit quae natus?
+             </p> -->
+        </div>
+    </div>
+</body>
+</html>
