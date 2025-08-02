@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Huninn&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Nunito','Huninn';
+        }
+
+        .container {
+            width: 960px;
+            margin-inline: auto;
+
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 30px;
+        }
+        img {
+            width: 100%;
+        }
+        .col {
+            display: flex;
+            flex-direction: column;
+
+            justify-content: center;
+            align-items: start;
+            gap: 20px;
+        }
+        .btn {
+            padding:10px 30px;
+            background-color: #101010;
+            color: #fff;
+            text-decoration: none;
+            text-transform: capitalize;
+            border-radius: 10px;
+
+            transition: 500ms
+
+        }
+        .btn:hover {
+            background-color: #fff;
+            color: #000;
+        }
+        .cover {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            aspect-ratio: 1/1;
+
+            border-radius: 15px;
+        }
+        .col:nth-of-type(1){
+            grid-column: span 3;
+        }
+        .col:nth-of-type(2){
+            /* grid-column: 4 / -1; */
+            grid-column: span 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="col">
+            <img src="https://picsum.photos/id/40/800" alt="" class="cover">
+        </div>
+        <div class="col">
+            <h2>title</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste illum quidem consectetur! At culpa, nisi, animi ex doloribus voluptas, odio veniam ratione aliquid iste voluptatibus a pariatur quod dicta itaque?
+            </p>
+            <a href="#" class="btn">link</a>
+        </div>
+    </div>
+</body>
+</html>
