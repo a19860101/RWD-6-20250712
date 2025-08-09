@@ -125,6 +125,13 @@ nav {
     background-color: var(--green);
     color: #fff;
 }
-#about .item {
-    align-items: start;
+#about { 
+    padding-block: 100px;
+    .item {
+        align-items: start;
+        p {
+            line-height: 1.2rem;
+        }
+    }
+    
 }
