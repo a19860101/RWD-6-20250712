@@ -165,3 +165,14 @@ nav {
     background-color: var(--clr-primary);
 
 }
+#service {
+    padding-block:calc(100px + 5vw);
+    background-color: var(--light);
+    img {
+        border-radius: 12px;
+    }
+    .service-content {
+        justify-content: center;
+        align-items: start;
+    }
+}
