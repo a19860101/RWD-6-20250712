@@ -56,6 +56,8 @@ nav {
 .g-2 {gap: calc(var(--spacing) * 2);}
 .g-3 {gap: calc(var(--spacing) * 3);}
 .flex {display: flex;}
+.flex-row {flex-direction: row;}
+.flex-col {flex-direction: column;}
 .grid {display: grid;}
 .ml-auto {margin-left: auto;}
 .mr-auto {margin-right: auto;}
@@ -102,3 +104,27 @@ nav {
 .grid-cols-4 {grid-template-columns: repeat(4,1fr);}
 .grid-cols-5 {grid-template-columns: repeat(5,1fr);}
 .grid-cols-6 {grid-template-columns: repeat(6,1fr);}
+
+.btn {
+    display: inline-block;
+    border: 0;
+    background-color: var(--light);
+    color: var(--dark);
+    padding: 8px 30px;
+    border-radius: 8px;
+}
+.btn-red {
+    background-color: var(--red);
+    color: #fff;
+}
+.btn-blue {
+    background-color: var(--blue);
+    color: #fff;
+}
+.btn-green {
+    background-color: var(--green);
+    color: #fff;
+}
+#about .item {
+    align-items: start;
+}
