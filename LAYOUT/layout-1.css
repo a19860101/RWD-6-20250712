@@ -137,8 +137,16 @@ nav {
 }
 
 #blog {
+    background-color: var(--light);
     padding-block:100px;
     .blog-content {
         align-items: start;
+        padding: var(--spacing);
+    }
+    .item {
+        background-color: var(--clr-primary-light);
+        /* border: 1px solid var(--dark); */
+        border-radius: 12px;
+        overflow: hidden;
     }
 }
