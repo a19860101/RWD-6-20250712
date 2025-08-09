@@ -141,7 +141,7 @@ nav {
 
 #blog {
     background-color: var(--light);
-    padding-block:calc(100px + 5vw);
+    padding-block:calc(150px + 5vw);
     clip-path: polygon(0 0,100% 0, 100% 100%, 0  calc(100% - 5vw));
     margin-top: -5vw;
     .blog-content {
@@ -161,12 +161,15 @@ nav {
 }
 #folio {
     margin-top: -5vw;
-    padding-block:calc(100px + 5vw);
+    padding-block:calc(150px + 5vw);
     background-color: var(--clr-primary);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 5vw), 0 100%);
+    z-index: 8;
 
 }
 #service {
-    padding-block:calc(100px + 5vw);
+    margin-top: -5vw;
+    padding-block:calc(150px + 5vw);
     background-color: var(--light);
     img {
         border-radius: 12px;
@@ -186,4 +189,5 @@ nav {
             order:1;
         }
     }
+    z-index: 7;
 }
