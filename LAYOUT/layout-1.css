@@ -126,7 +126,9 @@ nav {
     color: #fff;
 }
 #about { 
-    padding-block: 100px;
+    clip-path: polygon(0 0,100% 0, 100% calc(100% - 5vw), 0 100%);
+    padding-block: calc(100px + 5vw);
+    background-color: var(--clr-primary);
     .item {
         align-items: start;
         p {
@@ -138,7 +140,8 @@ nav {
 
 #blog {
     background-color: var(--light);
-    padding-block:100px;
+    padding-block:calc(100px + 5vw);
+    margin-top: -5vw;
     .blog-content {
         align-items: start;
         padding: var(--spacing);
@@ -150,6 +153,6 @@ nav {
         overflow: hidden;
     }
     .blog-img {
-        clip-path:polygon(0 0, 100% 0, 100% 90% ,0 100%)
+        clip-path:polygon(0 0, 100% 0, 100% 100% ,0 calc(100% - 1.5vw))
     }
 }
