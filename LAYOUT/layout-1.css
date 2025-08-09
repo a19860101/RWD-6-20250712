@@ -135,3 +135,10 @@ nav {
     }
     
 }
+
+#blog {
+    padding-block:100px;
+    .blog-content {
+        align-items: start;
+    }
+}
