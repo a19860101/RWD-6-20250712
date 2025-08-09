@@ -14,6 +14,8 @@
     --clr-primary-light: #DED3C4;
     --clr-secondary: #F4EBD3;
 
+    --spacing: 15px;
+
 }
 * {
     margin: 0;
@@ -38,8 +40,31 @@ https://colorhunt.co/palette/55587998a1bcded3c4f4ebd3
 */
 /* Nav */
 nav {
+    padding:25px var(--spacing);
     background-color: var(--red);
     a {
         color: var(--yellow);
     }
+    .nav-menu {
+        margin-left: auto;
+    }
+
+}
+.g-0 {
+    gap: calc(var(--spacing) * 0);
+}
+.g-1 {
+    gap: calc(var(--spacing) * 1)
+}
+.g-2 {
+    gap: calc(var(--spacing) * 2)
+}
+.g-3 {
+    gap: calc(var(--spacing) * 3)
+}
+.flex {
+    display: flex;
+}
+.grid {
+    display: grid;
 }
