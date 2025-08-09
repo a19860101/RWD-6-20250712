@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Huninn&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+:root {
+    --red: #ce0048;
+    --orange:#f2c77c;
+    --yellow:#fbed6c;
+    --green:#a5d465;
+    --blue:#5c99b1;
+    --purple:#b089c6;
+    --dark:#282828;
+    --light:#e6e6e6;
+
+    --clr-primary: #98A1BC;
+    --clr-primary-dark: #555879;
+    --clr-primary-light: #DED3C4;
+    --clr-secondary: #F4EBD3;
+
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Nunito','Huninn';
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+/* 
+https://colorhunt.co/palette/5a827e84ae92b9d4aafaffca 
+5A827E
+84AE92
+B9D4AA
+FAFFCA
+https://colorhunt.co/palette/55587998a1bcded3c4f4ebd3
+*/
+/* Nav */
+nav {
+    background-color: var(--red);
+    a {
+        color: var(--yellow);
+    }
+}
