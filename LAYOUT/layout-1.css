@@ -149,4 +149,7 @@ nav {
         border-radius: 12px;
         overflow: hidden;
     }
+    .blog-img {
+        clip-path:polygon(0 0, 100% 0, 100% 90% ,0 100%)
+    }
 }
