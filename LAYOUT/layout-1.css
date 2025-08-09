@@ -135,12 +135,14 @@ nav {
             line-height: 1.2rem;
         }
     }
+    z-index: 10;
     
 }
 
 #blog {
     background-color: var(--light);
     padding-block:calc(100px + 5vw);
+    clip-path: polygon(0 0,100% 0, 100% 100%, 0  calc(100% - 5vw));
     margin-top: -5vw;
     .blog-content {
         align-items: start;
@@ -155,8 +157,10 @@ nav {
     .blog-img {
         clip-path:polygon(0 0, 100% 0, 100% 100% ,0 calc(100% - 1.5vw))
     }
+    z-index: 9;
 }
 #folio {
+    margin-top: -5vw;
     padding-block:calc(100px + 5vw);
     background-color: var(--clr-primary);
 
