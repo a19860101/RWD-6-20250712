@@ -175,4 +175,15 @@ nav {
         justify-content: center;
         align-items: start;
     }
+    .container {
+        margin-bottom: calc(var(--spacing) * 2);
+    }
+    .container:nth-of-type(even){
+        div:first-of-type {
+            order:2;
+        }
+        div:last-of-type {
+            order:1;
+        }
+    }
 }
