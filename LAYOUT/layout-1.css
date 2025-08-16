@@ -252,12 +252,22 @@ section {
     .container {
         margin-bottom: calc(var(--spacing) * 2);
     }
-    .container:nth-of-type(even){
+    /* .container:nth-of-type(even){
         div:first-of-type {
             order:2;
         }
         div:last-of-type {
             order:1;
+        }
+    } */
+    @media(width > 640px){
+        .container:nth-of-type(even){
+            div:first-of-type {
+                order:2;
+            }
+            div:last-of-type {
+                order:1;
+            }
         }
     }
     z-index: 7;
