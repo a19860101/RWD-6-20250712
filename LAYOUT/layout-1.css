@@ -171,6 +171,8 @@ nav {
     margin-top: -5vw;
     padding-block:calc(150px + 5vw);
     background-color: var(--light);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 5vw));
+
     img {
         border-radius: 12px;
     }
@@ -219,4 +221,11 @@ nav {
 }
 textarea.form-control {
     height: 200px;
+}
+
+footer {
+    justify-content: space-between;
+    background-color: var(--dark);
+    color: var(--light);
+    padding: 20px var(--spacing);
 }
