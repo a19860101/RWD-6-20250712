@@ -44,7 +44,7 @@ FAFFCA
 https://colorhunt.co/palette/55587998a1bcded3c4f4ebd3
 */
 /* Nav */
-nav {
+.nav {
     padding:25px var(--spacing);
     background-color: var(--red);
     a {
@@ -58,11 +58,22 @@ nav {
         }
     }
 }
+
+.mobile-nav {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--red);
+    z-index: 999;
+    align-items: center;
+    justify-content: center;
+}
 .g-0 {gap: calc(var(--spacing) * 0);}
 .g-1 {gap: calc(var(--spacing) * 1);}
 .g-2 {gap: calc(var(--spacing) * 2);}
 .g-3 {gap: calc(var(--spacing) * 3);}
 .flex {display: flex;}
+.none {display:none;}
 .flex-row {flex-direction: row;}
 .flex-col {flex-direction: column;}
 .grid {display: grid;}
