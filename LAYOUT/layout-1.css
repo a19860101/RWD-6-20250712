@@ -92,6 +92,12 @@ nav {
 .sticky {position: sticky;}
 .inset-0 {inset:0}
 
+header {
+    height: 100vh;
+    clip-path: polygon(0 0 , 100% 0 , 100% calc(100% - 5vw), 50% 100% , 0 calc(100% - 5vw));
+    position: relative;
+    z-index: 11;
+}
 
 .header-content {
     width: 50%;
@@ -147,8 +153,9 @@ nav {
     }
 }
 #about { 
+    margin-top: -5vw;
     clip-path: polygon(0 0,100% 0, 100% calc(100% - 5vw), 0 100%);
-    padding-block: calc(100px + 5vw);
+    padding-block: calc(150px + 5vw);
     background-color: var(--clr-primary);
     .item {
         align-items: start;
