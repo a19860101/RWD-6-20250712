@@ -99,8 +99,11 @@ header {
     z-index: 11;
 }
 
+h1 {
+    font-size: clamp(3rem,4vw,5rem);
+}
 .header-content {
-    width: 50%;
+    width: 90%;
     height: fit-content;
     background-color: #ffffff31;
     backdrop-filter: blur(8px); 
@@ -108,6 +111,20 @@ header {
     flex-direction: column;
     padding: calc(var(--spacing) * 2);
     border-radius: 15px;
+    align-items: center;
+    p {
+        font-size: clamp(16px,1.4vw,24px);
+    }
+}
+@media(width > 640px){
+    .header-content {
+        width: 70%;
+    }
+}
+@media(width > 1140px){
+    .header-content {
+        width: 50%;
+    }
 }
 
 .container {max-width: 1140px}
