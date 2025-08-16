@@ -116,14 +116,28 @@ nav {
 .btn-red {
     background-color: var(--red);
     color: #fff;
+    transition: 300ms;
+    &:hover {
+        background-color: var(--orange);
+        color: var(--dark);
+    }
 }
 .btn-blue {
     background-color: var(--blue);
     color: #fff;
+    transition: 300ms;
+    &:hover {
+        background-color: var(--green);
+        color: var(--dark);
+    }
 }
 .btn-green {
     background-color: var(--green);
     color: #fff;
+    transition: 300ms;
+    &:hover {
+        background-color: var(--red);
+    }
 }
 #about { 
     clip-path: polygon(0 0,100% 0, 100% calc(100% - 5vw), 0 100%);
