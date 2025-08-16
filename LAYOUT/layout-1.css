@@ -48,7 +48,14 @@ nav {
     padding:25px var(--spacing);
     background-color: var(--red);
     a {
-        color: var(--yellow);
+        color: var(--light);
+        
+    }
+    .nav-link {
+        transition: 30ms;
+        &:hover{
+            color: var(--yellow);
+        }
     }
 }
 .g-0 {gap: calc(var(--spacing) * 0);}
