@@ -208,6 +208,14 @@ nav {
     padding: 8px;
     border-radius: 7px;
     border: 1px solid var(--dark);
+    transition: 500ms;
+
+    outline:0;
+}
+.form-control:focus {
+    /* outline: 2px solid var(--orange) */
+    border: 1px solid var(--green);
+    background: var(--green);
 }
 textarea.form-control {
     height: 200px;
