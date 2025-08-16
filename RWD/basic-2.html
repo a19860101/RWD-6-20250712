@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            max-width: 1140px;
+            margin: auto;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 15px;
+        }
+        @media(min-width: 600px){
+            .grid {
+                /* display: grid; */
+                grid-template-columns: repeat(2, 1fr);
+                /* gap: 15px; */
+            }
+        }
+        @media(min-width: 1140px){
+            .grid {
+                /* display: grid; */
+                grid-template-columns: repeat(4, 1fr);
+                /* gap: 15px; */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container grid">
+        <div>
+            <h2>title</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, sequi quod praesentium quos veritatis rerum enim aperiam tenetur nemo, expedita impedit pariatur debitis velit modi beatae quisquam! Possimus, nam sit?
+            </p>
+        </div>
+        <div>
+            <h2>title</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, sequi quod praesentium quos veritatis rerum enim aperiam tenetur nemo, expedita impedit pariatur debitis velit modi beatae quisquam! Possimus, nam sit?
+            </p>
+        </div>
+        <div>
+            <h2>title</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, sequi quod praesentium quos veritatis rerum enim aperiam tenetur nemo, expedita impedit pariatur debitis velit modi beatae quisquam! Possimus, nam sit?
+            </p>
+        </div>
+        <div>
+            <h2>title</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, sequi quod praesentium quos veritatis rerum enim aperiam tenetur nemo, expedita impedit pariatur debitis velit modi beatae quisquam! Possimus, nam sit?
+            </p>
+        </div>
+    </div>
+</body>
+</html>
