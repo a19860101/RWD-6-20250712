@@ -5,18 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        :root {
+            --blue: #4a7cfa
+        }
         .container {
             display: grid;
             grid-template-columns: repeat(3,1fr);
+            grid-auto-rows: 300px;
+            gap: 10px;
             
+        }
+        .grid {
+            display: flex;
+            background-color: #ccc;
+            [class^='loading']{
+                margin: auto;
+            }
         }
         .loading-1 {
             width: 100px;
             height: 100px;
-            background-color: #4a7cfa;
-            /* position: fixed; */
-            /* inset: 0; */
-            /* margin: auto; */
+            background-color: var(--blue);
+            margin: auto;
 
             animation: loading-1 1s infinite alternate;
         }
@@ -25,10 +35,17 @@
             height: 100px;
             border: 10px solid #eee;
             border-radius: 50%;
-            border-left-color:blue;
-            border-right-color:blue;
+            border-left-color:var(--blue);;
+            border-right-color:var(--blue);;
 
             animation: loading-1 1.5s infinite;
+        }
+        .loading-3 {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--blue);
+            animation: loading-3 1s infinite ease-out;
         }
         @keyframes loading-1 {
             to {
@@ -40,12 +57,28 @@
                 rotate: 360deg;
             }
         }
+        @keyframes loading-3 {
+            from {
+                scale:0;
+            }
+            to {
+                scale:1;
+                opacity: 0;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="loading-1"></div>
-        <div class="loading-2"></div>
+        <div class="grid">
+            <div class="loading-1"></div>
+        </div>
+        <div class="grid">
+            <div class="loading-2"></div>
+        </div>
+        <div class="grid">
+            <div class="loading-3"></div>
+        </div>
     </div>
 </body>
 </html>
