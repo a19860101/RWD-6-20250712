@@ -83,9 +83,28 @@
                 rotate: 0;
             }
         }
+        .progress {
+            width: 100%;
+            scale: 0 1;
+            transform-origin: left;
+            height: 10px;
+            background-color: #f00;
+            top: 0;
+            left: 0;
+            position: fixed;
+            animation: progress linear;
+            animation-timeline: scroll();
+        }
+        @keyframes progress {
+            to {
+                /* width: 100%; */
+                scale: 1 1;
+            }
+        }
     </style>
 </head>
 <body>
+    <div class="progress"></div>
     <section>
         <h2>ONE</h2>
     </section>
