@@ -75,6 +75,15 @@
             scale: .5;
             background-color: var(--blue);
         }
+        .loading-5 {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: var(--blue);
+            box-shadow: -25px 0 0 0 var(--blue), 25px 0 0 0 var(--blue);
+
+            animation: loading-5 2.1s linear infinite;
+        }
         @keyframes loading-1 {
             to {
                 rotate: 360deg;
@@ -99,6 +108,24 @@
                 rotate: 360deg
             }
         }
+        @keyframes loading-5 {
+            0% {
+                background-color: #999;
+                box-shadow: -25px 0 0 0 #999, 25px 0 0 0 #999;
+            }
+            33.333% {
+                background-color: #999;
+                box-shadow: -25px 0 0 0 var(--blue), 25px 0 0 0 #999;
+            }
+            66.666% {
+                background-color: var(--blue);
+                box-shadow: -25px 0 0 0 #999, 25px 0 0 0 #999;
+            }
+            100% {
+                background-color: #999;
+                box-shadow: -25px 0 0 0 #999, 25px 0 0 0 var(--blue);
+            }
+        }
     </style>
 </head>
 <body>
@@ -114,6 +141,9 @@
         </div>
         <div class="grid">
             <div class="loading-4"></div>
+        </div>
+        <div class="grid">
+            <div class="loading-5"></div>
         </div>
     </div>
 </body>
