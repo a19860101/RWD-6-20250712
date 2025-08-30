@@ -31,7 +31,7 @@
         }
         section {
             height: 100vh;
-            animation: fade-in 1s;
+            
         }
         .container {
             max-width: 1200px;
@@ -42,6 +42,19 @@
             display: grid;
             grid-template-columns: repeat(4, 1fr);
         }
+        .grid {
+            background-color: #ccc;
+            /* animation: fade-in linear; */
+            animation-timeline: view();
+        }
+        .left {
+            animation: left-in linear;
+            animation-timeline: view();
+        }
+        .right {
+            animation: right-in linear;
+            animation-timeline: view();
+        }
         section:nth-of-type(1){background-color: #cc8686;}
         section:nth-of-type(2){background-color: #8094de;}
         section:nth-of-type(3){background-color: #acaef2;}
@@ -49,9 +62,33 @@
         @keyframes fade-in {
             from {
                 opacity: 0;
+                /* scale: 0; */
+                /* translate:100px ; */
             }
-            to {
+            50% {
                 opacity: 1;
+                /* scale: 1; */
+                /* translate:0; */
+            }
+        }
+        @keyframes left-in{
+            from {
+                opacity: 0;
+                translate: -200px 0;
+            }
+            50% {
+                opacity: 1;
+                translate:0;
+            }
+        }
+        @keyframes right-in{
+            from {
+                opacity: 0;
+                translate: 200px 0;
+            }
+            50% {
+                opacity: 1;
+                translate:0;
             }
         }
     </style>
@@ -62,25 +99,25 @@
     </section>
     <section>
         <div class="container">
-            <div class="grid">
+            <div class="grid left">
                 <h2>title</h2>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam dicta facere voluptates amet tenetur, ut blanditiis eum, adipisci maiores sit unde reprehenderit? Cum optio incidunt expedita nulla, nisi officiis possimus?
                 </p>
             </div>
-            <div class="grid">
+            <div class="grid left">
                 <h2>title</h2>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam dicta facere voluptates amet tenetur, ut blanditiis eum, adipisci maiores sit unde reprehenderit? Cum optio incidunt expedita nulla, nisi officiis possimus?
                 </p>
             </div>
-            <div class="grid">
+            <div class="grid right">
                 <h2>title</h2>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam dicta facere voluptates amet tenetur, ut blanditiis eum, adipisci maiores sit unde reprehenderit? Cum optio incidunt expedita nulla, nisi officiis possimus?
                 </p>
             </div>
-            <div class="grid">
+            <div class="grid right">
                 <h2>title</h2>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam dicta facere voluptates amet tenetur, ut blanditiis eum, adipisci maiores sit unde reprehenderit? Cum optio incidunt expedita nulla, nisi officiis possimus?
