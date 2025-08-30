@@ -47,6 +47,31 @@
             background-color: var(--blue);
             animation: loading-3 1s infinite ease-out;
         }
+        .loading-4 {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: var(--blue);
+            position: relative;
+        }
+        .loading-4::after {
+            content:'';
+            position: absolute;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            translate: 25px 0;
+            background-color: var(--blue);
+        }
+        .loading-4::before {
+            content:'';
+            position: absolute;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            translate: -25px 0;
+            background-color: var(--blue);
+        }
         @keyframes loading-1 {
             to {
                 rotate: 360deg;
@@ -78,6 +103,9 @@
         </div>
         <div class="grid">
             <div class="loading-3"></div>
+        </div>
+        <div class="grid">
+            <div class="loading-4"></div>
         </div>
     </div>
 </body>
