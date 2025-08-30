@@ -13,16 +13,20 @@
             /* opacity: 0; */
             /* animation: fade-in 3s forwards; */
 
-            animation: fade-out 3s forwards;
+            animation: test 3s 3s forwards;
+            /* animation-name: test; */
+            /* animation-duration: 3s; */
+            /* animation-delay: 3s; */
+            /* animation-fill-mode: forwards; */
         }
 
         @keyframes test {
-            from {
-                /* translate: 600px 0; */
-            }
-            to {
-                /* translate: 600px 0; */
-            }
+            0% {translate: 0 0}
+            50% {translate: 300px 400px}
+            100% {translate: 600px 100px}
+
+            /* from{} */
+            /* to{} */
         }
         @keyframes fade-in {
             to {
