@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        h2 {
+            font-size: 4rem;
+            margin: auto;
+            
+        }
+        section:nth-of-type(1){
+            display: flex;
+
+        }
+        section {
+            height: 100vh;
+            
+        }
+        .container {
+            max-width: 1200px;
+            height: 100%;
+            gap: 30px;
+            place-content: center;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+        
+        section:nth-of-type(1){background-color: #cc8686;}
+        section:nth-of-type(2){background-color: #8094de;}
+        section:nth-of-type(3){background-color: #acaef2;}
+        section:nth-of-type(4){background-color: #71eff1;}
+        
+        .q {
+            width: 100px;
+            height: 100px;
+            position: fixed;
+            background-color: #f00;
+            right: 100px;
+            z-index: 999;
+            bottom: 100px;
+            
+            animation: q2 linear;
+            animation-timeline: scroll();
+        }
+        @keyframes q {
+            to {
+                rotate: 360deg;
+            }
+        }
+        @keyframes q2 {
+            0% {}
+            33.333% {
+                background-color: blue;
+                translate: 0;
+                rotate: 180deg;
+            }
+            66.666% {
+                background-color: #fa0;
+                translate: -300px -600px;
+                rotate: 360deg;
+
+            }
+            100% {
+                translate: 0;
+                rotate: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h2>ONE</h2>
+    </section>
+    <section>
+        <div class="container">
+            <div class="grid left">
+                <h2>title</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam dicta facere voluptates amet tenetur, ut blanditiis eum, adipisci maiores sit unde reprehenderit? Cum optio incidunt expedita nulla, nisi officiis possimus?
+                </p>
+            </div>
+            <div class="grid left">
+                <h2>title</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam dicta facere voluptates amet tenetur, ut blanditiis eum, adipisci maiores sit unde reprehenderit? Cum optio incidunt expedita nulla, nisi officiis possimus?
+                </p>
+            </div>
+            <div class="grid right">
+                <h2>title</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam dicta facere voluptates amet tenetur, ut blanditiis eum, adipisci maiores sit unde reprehenderit? Cum optio incidunt expedita nulla, nisi officiis possimus?
+                </p>
+            </div>
+            <div class="grid right">
+                <h2>title</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam dicta facere voluptates amet tenetur, ut blanditiis eum, adipisci maiores sit unde reprehenderit? Cum optio incidunt expedita nulla, nisi officiis possimus?
+                </p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="grid">
+                <h2>title</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam dicta facere voluptates amet tenetur, ut blanditiis eum, adipisci maiores sit unde reprehenderit? Cum optio incidunt expedita nulla, nisi officiis possimus?
+                </p>
+            </div>
+            <div class="grid">
+                <h2>title</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam dicta facere voluptates amet tenetur, ut blanditiis eum, adipisci maiores sit unde reprehenderit? Cum optio incidunt expedita nulla, nisi officiis possimus?
+                </p>
+            </div>
+            <div class="grid">
+                <h2>title</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam dicta facere voluptates amet tenetur, ut blanditiis eum, adipisci maiores sit unde reprehenderit? Cum optio incidunt expedita nulla, nisi officiis possimus?
+                </p>
+            </div>
+            <div class="grid">
+                <h2>title</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam dicta facere voluptates amet tenetur, ut blanditiis eum, adipisci maiores sit unde reprehenderit? Cum optio incidunt expedita nulla, nisi officiis possimus?
+                </p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="grid">
+                <h2>title</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam dicta facere voluptates amet tenetur, ut blanditiis eum, adipisci maiores sit unde reprehenderit? Cum optio incidunt expedita nulla, nisi officiis possimus?
+                </p>
+            </div>
+            <div class="grid">
+                <h2>title</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam dicta facere voluptates amet tenetur, ut blanditiis eum, adipisci maiores sit unde reprehenderit? Cum optio incidunt expedita nulla, nisi officiis possimus?
+                </p>
+            </div>
+            <div class="grid">
+                <h2>title</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam dicta facere voluptates amet tenetur, ut blanditiis eum, adipisci maiores sit unde reprehenderit? Cum optio incidunt expedita nulla, nisi officiis possimus?
+                </p>
+            </div>
+            <div class="grid">
+                <h2>title</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam dicta facere voluptates amet tenetur, ut blanditiis eum, adipisci maiores sit unde reprehenderit? Cum optio incidunt expedita nulla, nisi officiis possimus?
+                </p>
+            </div>
+        </div>
+    </section>
+    <div class="q"></div>
+</body>
+</html>
