@@ -18,11 +18,11 @@
                 transform-origin: left;
                 overflow: hidden;
                 transition:5s;
+                white-space: nowrap;
             }
             &:hover {
                 div {
                     width: 100%;
-                    overflow: visible;
                 }
             }
             .ease {
@@ -40,6 +40,11 @@
             .linear {
                 transition-timing-function: linear;
             }
+            .cubic {
+                /* transition-timing-function: cubic-bezier(1,.26,.6,1.49); */
+                /* transition-timing-function: cubic-bezier(.68,-0.46,.45,1.21); */
+                transition-timing-function: cubic-bezier(.99,0,.42,.99);
+            }
         }
 
     </style>
@@ -51,6 +56,7 @@
         <div class="ease-out">ease-out</div>
         <div class="ease-in-out">ease-in-out</div>
         <div class="linear">linear</div>
+        <div class="cubic">cubic</div>
     </div>
 </body>
 </html>
