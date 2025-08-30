@@ -84,6 +84,18 @@
 
             animation: loading-5 2.1s linear infinite;
         }
+        .loading-6 {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: transparent;
+            box-shadow: 
+                -48px 0 0 0 var(--blue),
+                -16px 0 0 0 var(--blue),
+                16px 0 0 0 var(--blue), 
+                48px 0 0 0 var(--blue);
+            animation: loading-6 1s linear infinite;
+        }
         @keyframes loading-1 {
             to {
                 rotate: 360deg;
@@ -126,6 +138,43 @@
                 box-shadow: -25px 0 0 0 #999, 25px 0 0 0 var(--blue);
             }
         }
+        @keyframes loading-6 {
+            0% {
+                box-shadow: 
+                -48px 0 0 0px var(--blue),
+                -16px 0 0 0 var(--blue),
+                16px 0 0 0 var(--blue), 
+                48px 0 0 0 var(--blue);
+            }
+            20% {
+                box-shadow: 
+                -48px 0 0 -10px transparent,
+                -16px 0 0 0 var(--blue),
+                16px 0 0 0 var(--blue), 
+                48px 0 0 0 var(--blue);
+            }
+            40% {
+                box-shadow: 
+                -48px 0 0 0 var(--blue),
+                -16px 0 0 -10px transparent,
+                16px 0 0 0 var(--blue), 
+                48px 0 0 0 var(--blue);
+            }
+            60% {
+                box-shadow: 
+                -48px 0 0 0 var(--blue),
+                -16px 0 0 0 var(--blue),
+                16px 0 0 -10px transparent, 
+                48px 0 0 0 var(--blue);
+            }
+            80% {
+                box-shadow: 
+                -48px 0 0 0 var(--blue),
+                -16px 0 0 0 var(--blue),
+                16px 0 0 0 var(--blue), 
+                48px 0 0 -10px transparent;
+            }
+        }
     </style>
 </head>
 <body>
@@ -144,6 +193,9 @@
         </div>
         <div class="grid">
             <div class="loading-5"></div>
+        </div>
+        <div class="grid">
+            <div class="loading-6"></div>
         </div>
     </div>
 </body>
