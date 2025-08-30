@@ -13,11 +13,15 @@
             /* opacity: 0; */
             /* animation: fade-in 3s forwards; */
 
-            animation: test 3s 3s forwards;
-            /* animation-name: test; */
-            /* animation-duration: 3s; */
-            /* animation-delay: 3s; */
+            /* animation: test 3s 3s forwards; */
+            animation-name: test;
+            animation-duration: 1s;
+            animation-delay: 0s;
             /* animation-fill-mode: forwards; */
+            animation-iteration-count: infinite;
+            animation-direction: alternate-reverse;
+            /* normal, reverse, alternate, alternate-reverse */
+            animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
         }
 
         @keyframes test {
