@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 600px;
+            background-color: #ccc;
+            display: grid;
+            gap: 30px;
+            padding-block: 30px;
+            div {
+                height: 50px;
+                background-color: #ffdb5a;
+                width: 0;
+                transform-origin: left;
+                overflow: hidden;
+                transition:5s;
+            }
+            &:hover {
+                div {
+                    width: 100%;
+                    overflow: visible;
+                }
+            }
+            .ease {
+                transition-timing-function: ease;
+            }
+            .ease-in {
+                transition-timing-function: ease-in;
+            }
+            .ease-out {
+                transition-timing-function: ease-out;
+            }
+            .ease-in-out {
+                transition-timing-function: ease-in-out;
+            }
+            .linear {
+                transition-timing-function: linear;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="ease">ease</div>
+        <div class="ease-in">ease-in</div>
+        <div class="ease-out">ease-out</div>
+        <div class="ease-in-out">ease-in-out</div>
+        <div class="linear">linear</div>
+    </div>
+</body>
+</html>
