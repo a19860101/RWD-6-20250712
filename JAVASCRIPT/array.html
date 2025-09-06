@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = ['apple','banana','cat','dog'];
+        // let a = new Array();
+        // a[0] = 'apple';
+        // a[1] = 'banana'
+        // let a = new Array('apple','banana')
+
+        // console.log(a);
+        // console.log(a[0])
+        // console.log(a[1])
+
+        // 索引值從0開始算
+        // 陣列名稱[索引值]
+
+        console.log(a.length)
+
+        // 遍歷資料
+        for(let i=0;i<a.length;i++){
+            console.log(a[i])
+        }
+
+        // for...of 遍歷資料
+        for(let item of a){
+            console.log(item)
+        }
+        // for...in 遍歷索引值
+        for(let i in a){
+            // console.log(i)
+            console.log(a[i])
+        }
+
+
+        const b = ['apple','banana'];
+        console.log(b)
+    </script>
+</body>
+</html>

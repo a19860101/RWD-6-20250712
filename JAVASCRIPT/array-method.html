@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const drinks = ['紅茶','綠茶','奶茶','冬瓜茶'];
+
+        // length 計算陣列長度
+        // 計算陣列內值的數量
+        // console.log(drinks.length)
+
+        // push() 
+        // 新增資料至陣列後方
+        // drinks.push('拿鐵');
+        // drinks.push(['美式咖啡','卡布奇諾'])
+        // console.log(drinks)
+
+        // pop()
+        // 移除陣列後方資料
+        // drinks.pop()
+        // console.log(drinks)
+
+        // unshift()
+        // 新增資料至陣列前方
+        // drinks.unshift('水')
+        // console.log(drinks)
+
+        // shift()
+        // 移除陣列前方資料
+        // drinks.shift();
+        // console.log(drin)
+
+        console.log(drinks)
+
+        // slice()
+        // 切割資料
+        let d2 = drinks.slice(1,3)
+        // console.log(d2)
+
+        // splice()
+        // 拼接資料
+        // splice(索引值,刪除數量,拼接資料...)
+        // drinks.splice(1,2,'拿鐵','美式');
+        // drinks.splice(3,1)
+        // console.log(drinks)
+
+
+        // toString() 
+        // 陣列轉字串
+        // console.log(drinks.toString())
+
+        // join()
+        // 陣列轉字串
+        // console.log(drinks.join('!!!'))
+
+
+        // sort() 
+        // 排序
+        const a = [23,12,43,17,15]; //12 15 23 43 7
+        const b = ['cat','dog','apple','banana']
+        const c = [2,3,4,1,5]
+        // console.log(a.sort())
+        let i = 1;
+        // const a_sort = a.sort(function(a,b){
+        //     console.log(i)
+        //     console.log('a:',a)
+        //     console.log('b:',b)
+        //     i++
+        // })
+        const a_sort = a.sort(function(x,y){
+            // console.log(a)
+            console.log(x,y)
+            // 遞增
+            return x - y 
+            // 遞減
+            // return y - x 
+        })
+        // console.log(a_sort)
+        
+
+        // reverse()
+        // 反轉陣列
+        // console.log(drinks.reverse())
+
+        console.log(b.sort().reverse())
+
+        // split() 
+        // 字串轉陣列
+        let s = 'hello,John,!!'
+        // console.log(s.split())
+        // console.log(s.split(','))
+        // console.log(s.split(''))
+
+        let t = 'hello world!!'
+        console.log(t.split('').reverse().join(''))
+
+
+
+        const z = [7,24,12,35,4]
+
+        z.sort((a,b)=>{
+            console.log(a,b)
+            return a-b
+        })
+    </script>
+</body>
+</html>

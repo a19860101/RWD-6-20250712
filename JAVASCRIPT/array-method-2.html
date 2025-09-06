@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const drinks = ['紅茶','綠茶','奶茶','冬瓜茶','拿鐵'];
+
+        // forEach
+        // drinks.forEach(function(data){
+        //     console.log(data)
+        // })
+
+        // map 對應
+        const drinks_map = drinks.map(function(data){
+            if(data.length>2){
+                return data
+            }else{
+                return null
+            }
+        })
+        console.log(drinks_map)
+
+        // filter 篩選
+        const drinks_filter = drinks.filter(function(data){
+            // return data == '奶茶'
+            return data.indexOf('茶') == -1
+        })
+        console.log(drinks_filter)
+
+        //find 尋找
+        const drinks_find = drinks.find(function(data){
+            return data == '茶';
+        })
+        console.log(drinks_find)
+        // find_index 尋找索引
+        const drinks_find_index = drinks.findIndex(function(data){
+            return data == '奶茶';
+        })
+        console.log(drinks_find_index)
+
+        // some() 部分符合
+        const drinks_some = drinks.some(function(data){
+            return data == '紅茶'
+        })
+        console.log(drinks_some)
+
+        // every() 全部符合
+        const drinks_every = drinks.every(function(data){
+            return data == '紅茶'
+        })
+        console.log(drinks_every)
+    
+    </script>
+</body>
+</html>
