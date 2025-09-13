@@ -18,11 +18,18 @@
             background-color: #aaa;
             padding: 15px;
             border-bottom: 2px solid #ccc;
+            transition: 500ms;
+        }
+        h2.active{
+            background-color: #fc8989;
         }
         .collapse-body {
             padding: 15px;
             background-color: #ccc;
             display: none;
+        }
+        .collapse-body.active {
+            display: block;
         }
 
     </style>
@@ -63,5 +70,17 @@
             </p>
         </div>
     </div>
+    <script>
+        let btns = document.querySelectorAll('h2')
+        for(let btn of btns){
+            btn.onclick = e => {
+                console.log(e.target)
+                e.target.classList.toggle('active')
+
+                let target = e.target.nextElementSibling
+                target.classList.toggle('active')
+            }
+        }
+    </script>
 </body>
 </html>
