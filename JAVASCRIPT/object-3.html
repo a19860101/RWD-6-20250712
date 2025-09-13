@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const posts = [
+            {
+                title: 'post 1',
+                author: 'John',
+                publish_date: '2025-09-10',
+                tags: ['design','photoshop']
+            },
+            {
+                title: 'post 2',
+                author: 'Mary',
+                publish_date: '2025-09-11',
+                tags: ['web','Javascript']
+            },
+            {
+                title: 'post 3',
+                author: 'John',
+                publish_date: '2025-09-12',
+                tags: ['design','Illustrator']
+            },
+        ]
+
+        // 顯示author是John的資料
+        const post_john = posts.filter(function(post){
+            return post.author == 'John'
+        })
+        console.log(post_john)
+
+        // 顯示所有標籤，並去除重複
+        const tags = posts.map(function(post){
+            return post.tags;
+        }).flat()
+        console.log(tags)
+        console.log(new Set(tags))
+        console.log(Array.from(new Set(tags)))
+
+        // 篩選tags有design的資料
+        const post_design = posts.filter(function(post){
+            return post.tags.includes('design')
+        })
+        console.log(post_design)
+    </script>
+</body>
+</html>
