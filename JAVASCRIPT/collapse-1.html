@@ -24,23 +24,19 @@
             background-color: #fc8989;
         }
         .collapse-body {
-            padding: 15px;
+            padding-inline: 15px;
+            padding-block: 0;
             background-color: #ccc;
-            display: none;
+            max-height: 0;
+            overflow: hidden;
+            transition: 1000ms;
 
-            transition: 500ms allow-discrete;
-            opacity: 0;
         }
         .collapse-body.active {
-            display: block;
-            opacity: 1;
+            max-height: 300px;
+            padding-block: 15px;
         }
-        @starting-style {
-            .collapse-body.active {
-                display: block;
-                opacity: 0;
-            }
-        }
+        
     </style>
 </head>
 <body>
