@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            transition: 600ms;
+        }
+        .active {
+            color: red;
+            background-color: #91beec;
+        }
+    </style>
+</head>
+<body>
+    <a href="#" class="add" onclick="add_class()">add class</a>
+    <a href="#" class="remove" onclick="remove_class()">remove class</a>
+    <a href="#" class="toggle" onclick="toggle_class()">toggle class</a>
+    <p>選手所在評論衣服網頁將來，民主能學到，管理系統一路用品，連接配合招聘心靈律師大幅他們的，吃了碩士中文衝突西安比如沒人她是輸出，接着那天並在屬於消費者接口有點居然顧問出版社形式早已，優秀可愛嘉義程式更新引用，中有基層大眾如果良好，這個需求返回以後，一大智能。</p>
+    
+    <script>
+        let add = document.querySelector('.add');
+        let remove = document.querySelector('.remove');
+        let toggle = document.querySelector('.toggle');
+
+        let p = document.querySelector('p');
+
+        // onclick
+        // add.onclick = function(){
+        //     // p.style.color = 'red'
+        //     p.classList.add('active')
+        // }
+        // remove.onclick = function(){
+        //     p.classList.remove('active')
+        // }
+        // toggle.onclick = function(){
+        //     p.classList.toggle('active')
+        // }
+        toggle.onclick = () => {
+            p.classList.toggle('active')
+        }
+        
+        // addEventListener
+        // add.addEventListener('click',function(){
+        //     p.classList.add('active')
+        // })
+        // remove.addEventListener('click',()=>{
+        //     p.classList.remove('active')
+        // })
+        // toggle.addEventListener('click',()=>{
+        //     p.classList.toggle('active')
+        // })
+
+        function add_class(){
+            p.classList.add('active')
+        }
+        function remove_class(){
+            p.classList.remove('active')
+        }
+        function toggle_class(){
+            p.classList.toggle('active')
+        }
+    </script>
+</body>
+</html>
