@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>list 1</li>
+        <li>list 2</li>
+        <li>list 3</li>
+    </ul>
+    <script>
+        let ul = document.querySelector('ul')
+        // HTMLCollection 動態
+        let li_collection = document.getElementsByTagName('li')
+        // NodeList 靜態
+        let li_nodelist = document.querySelectorAll('li')
+
+        let el = document.createElement('li')
+        ul.append(el)
+        
+        let li_nodelist_after = document.querySelectorAll('li')
+
+
+        console.log(li_collection)
+        console.log(li_nodelist)
+        console.log(li_nodelist_after)
+
+
+
+    </script>
+</body>
+</html>

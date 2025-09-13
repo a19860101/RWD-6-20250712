@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title">title</h1>
+    <p class="content">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo nihil expedita possimus voluptas vitae aut sit soluta placeat accusamus. Illo cumque pariatur distinctio itaque quisquam! Esse repellendus consequatur labore eligendi.
+    </p>
+    <ul>
+        <li class="item">list 1</li>
+        <li class="item">list 2</li>
+        <li class="item">list 3</li>
+    </ul>
+    <script>
+        // getElement
+        // HTMLCollection
+
+        // let title = document.getElementById('title');
+        // console.log(title)
+        // let content = document.getElementsByClassName('content')
+        // console.log(content[0])
+        // let li = document.getElementsByTagName('li')
+        // console.log(li[0])
+        // console.log(li[1])
+        // console.log(li[2])
+
+        // querySelector
+        // NodeList
+
+        // let title = document.querySelector('#title')
+        // console.log(title)
+        // let content = document.querySelector('.content')
+        // console.log(content)
+        // let li = document.querySelector('li')
+        // console.log(li)
+
+        // querySelectorAll
+        let content = document.querySelectorAll('.content')
+        console.log(content)
+
+        let li = document.querySelectorAll('.item')
+        console.log(li[0])
+        console.log(li[1])
+        console.log(li[2])
+
+        console.log(li)
+    </script>
+</body>
+</html>
