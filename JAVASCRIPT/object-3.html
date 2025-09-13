@@ -29,23 +29,26 @@
         ]
 
         // 顯示author是John的資料
-        const post_john = posts.filter(function(post){
-            return post.author == 'John'
-        })
+        // const post_john = posts.filter(function(post){
+        //     return post.author == 'John'
+        // })
+        const post_john = posts.filter(post => post.author == 'John')
         console.log(post_john)
 
         // 顯示所有標籤，並去除重複
-        const tags = posts.map(function(post){
-            return post.tags;
-        }).flat()
+        // const tags = posts.map(function(post){
+        //     return post.tags;
+        // }).flat()
+        const tags = posts.map((post) => post.tags).flat()
         console.log(tags)
         console.log(new Set(tags))
         console.log(Array.from(new Set(tags)))
 
         // 篩選tags有design的資料
-        const post_design = posts.filter(function(post){
-            return post.tags.includes('design')
-        })
+        // const post_design = posts.filter(function(post){
+        //     return post.tags.includes('design')
+        // })
+        const post_design = posts.filter(post => post.tags.includes('design'))
         console.log(post_design)
     </script>
 </body>

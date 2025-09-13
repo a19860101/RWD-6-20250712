@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 箭頭函式
+        // const q = function(){
+        //     return 'hello'
+        // }
+
+        // const q = () => {
+        //     return 'hello'
+        // }
+
+        // const q = (data) => {
+        //     return data
+        // }
+
+        // 當參數只有一個時，小括號可省略
+        // const q = data => {
+        //     return data
+        // }
+
+        // const a = (x,y) => {return x*y}
+        
+        // 當動作只有return時，大括號跟return皆可省略
+        // const q = data => data
+        
+        // 當return是物件時，外層要包小括號
+        // const q = () => 
+        //     ({
+        //         name:'John',
+        //         email: 'asdf@gmail.com'
+        //     })
+        
+        // console.log(q())
+
+        const obj = {
+            name: 'john',
+            mail: 'asdf@gmail.com',
+            foo1: function(){
+                return this
+            },
+            foo2: () => {
+                return this
+            },
+        }
+        
+        console.log(obj.foo1())
+        console.log(obj.foo2())
+        console.log(this)
+    </script>
+</body>
+</html>
