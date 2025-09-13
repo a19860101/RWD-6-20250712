@@ -5,10 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .box-3 {
+        .box-1 {
             width: 300px;
             height: 300px;
             background-color: #ccc;
+        }
+        .box-2 {
+            width: 200px;
+            height: 200px;
+            background-color: #fa0;
+        }
+        .box-3 {
+            width: 100px;
+            height: 100px;
+            background-color: #098;
         }
     </style>
 </head>
@@ -23,18 +33,40 @@
         let b2 = document.querySelector('.box-2')
         let b3 = document.querySelector('.box-3')
 
-        b1.addEventListener('click', (e)=>{
-            console.log('b1')
-            e.stopPropagation
-        },true)
-        b2.addEventListener('click', (e)=>{
-            console.log('b2')
-           
-        })
-        b3.addEventListener('click', (e)=>{
-            console.log('b3')
-             
-        })
+        // b1.addEventListener('click',(e)=>{
+        //     b1.style.backgroundColor = 'red'
+            
+        // })
+        // b2.addEventListener('click',(e)=>{
+        //     e.stopPropagation()
+        // },true)
+
+        b1.onclick = () => {
+            b1.style.backgroundColor = 'red'
+        }
+        b2.onclick = e => {
+            e.stopPropagation()
+        }
+        // b1.addEventListener('click', (e)=>{
+        //     console.log('b1 capturing')
+            
+        // },true)
+        // b2.addEventListener('click', (e)=>{
+        //     console.log('b2 capturing')
+        // },true)
+        // b3.addEventListener('click', (e)=>{
+        //     console.log('b3 capturing')
+        // })
+
+        // b1.addEventListener('click', (e)=>{
+        //     console.log('b1 bubbling')
+        // },false)
+        // b2.addEventListener('click', (e)=>{
+        //     console.log('b2 bubbling')
+        // },false)
+        // b3.addEventListener('click', (e)=>{
+        //     console.log('b3 bubbling')
+        // })
     </script>
 </body>
 </html>
