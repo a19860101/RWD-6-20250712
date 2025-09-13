@@ -8,18 +8,16 @@
 <body>
     <script>
 
-        // 表達式
-        // function expression
+        // 宣告式、陳述式
+        // function declaration
         // 具有提升性
         function test(){
             return 100
         }
         // console.log(test())
 
-        
-
-        // 宣告式、陳述式
-        // function declaration
+         // 表達式
+        // function expression
         const test2 = function(){
             return 100
         }
@@ -35,11 +33,46 @@
         }
         console.log(area(100,200))
 
-        function rate(dollar){
-            let rate = 30;
+        // function rate(dollar, rate=30){
+        //     return dollar / rate
+        // }
+
+        const rate = function(dollar, rate=30){
             return dollar / rate
         }
-        console.log(rate(10000))
+        // console.log(rate(10000,29))
+
+        // 箭頭函式
+        // const q = function(){
+        //     return 'hello'
+        // }
+
+        // const q = () => {
+        //     return 'hello'
+        // }
+
+        // const q = (data) => {
+        //     return data
+        // }
+
+        // 當參數只有一個時，小括號可省略
+        // const q = data => {
+        //     return data
+        // }
+
+        // const a = (x,y) => {return x*y}
+        
+        // 當動作只有return時，大括號跟return皆可省略
+        // const q = data => data
+        
+        // 當return是物件時，外層要包小括號
+        const q = () => 
+            ({
+                name:'John',
+                email: 'asdf@gmail.com'
+            })
+        
+        console.log(q())
        
     </script>
 </body>
