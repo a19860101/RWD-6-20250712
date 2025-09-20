@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .tab {
+            width: 600px;
+            margin-inline: auto;
+            position: relative;
+        }
+        .tab-nav {
+            background-color: #aaa;
+            display: flex;
+            .tab-link {
+                padding: 15px;
+                text-decoration: none;
+                color: #000;
+                &.active {
+                    background-color: #ccc;
+                }
+            }
+        }
+        .tab-panel {
+            background-color: #ccc;
+            padding: 15px;
+            position: absolute;
+            display: none;
+            &.active {
+                display: block;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="tab">
+        <div class="tab-nav">
+            <a href="#" class="tab-link active">tab 1</a>
+            <a href="#" class="tab-link">tab 2</a>
+            <a href="#" class="tab-link">tab 3</a>
+            <a href="#" class="tab-link">tab 4</a>
+        </div>
+        <div class="tab-panel active" id="tab-1">
+            <h2>Tab 1</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat soluta numquam recusandae consequuntur blanditiis quas veniam magni assumenda dicta minus! Blanditiis dolore, omnis atque dolorem veniam inventore! Corporis, corrupti praesentium.
+            </p>
+        </div>
+        <div class="tab-panel" id="tab-2">
+            <h2>Tab 2</h2>
+            <p>
+                重要萬華廣告誘惑發揮飛機簽名客人北方發展紡織以外不願意頭髮，防治外掛出了因為引進註冊出售本公司和平島幹部，知名之間好看一下對手，有限責任醫生拒絶批評邀請讀書都能贏得創建元素瀏覽女兒技能，手上如今青草湖谷歌近期這樣廣播對了範圍金屬專門始終英語進去，消費不太。
+            </p>
+        </div>
+        <div class="tab-panel" id="tab-3">
+            <h2>Tab 3</h2>
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius quis doloremque ex a debitis velit nobis! Consequatur possimus asperiores id officiis. Distinctio rerum temporibus saepe nam aperiam illum sit ea mollitia quidem esse, reprehenderit accusantium ipsa quae quaerat reiciendis. Quod obcaecati reprehenderit aspernatur nostrum facilis asperiores explicabo voluptas eligendi amet.
+            </p>
+        </div>
+        <div class="tab-panel" id="tab-4">
+            <h2>Tab 4</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla animi, suscipit necessitatibus voluptates ipsam obcaecati blanditiis corrupti, reprehenderit aut at quibusdam tempore quos nemo odit natus ab libero! Aperiam quod consequatur provident mollitia tempore sint saepe quaerat amet, nesciunt quibusdam.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
