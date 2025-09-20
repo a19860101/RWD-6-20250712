@@ -23,7 +23,7 @@
         }
         @starting-style {
             .slider-item.active {
-                opacity: 0;
+                opacity: 1;
             }
         }
 
@@ -75,9 +75,19 @@
         let currentIndex = 0;
 
         // 切換時間(毫秒)
-        let timeout = 5000;
+        let timeout = 2000;
 
-        function slider(){
+        let next = document.querySelector('.slider-next');
+        let prev = document.querySelector('.slider-prev');
+
+        next.onclick = function(){
+            slider()
+        }
+        prev.onclick = function(){
+            slider(-1)
+        }
+
+        function slider(direction){
             
             // if(currentIndex == total - 1){
             //     currentIndex = 0
@@ -85,7 +95,18 @@
             //     currentIndex += 1
             // }
 
-            currentIndex = (currentIndex + 1) % total;
+            // if(currentIndex == 0){
+            //     currentIndex = total - 1
+            // }else{
+            //     currentIndex -= 1;
+            // }
+            
+            if(direction == -1){
+                currentIndex = currentIndex == 0 ? total: currentIndex;
+                currentIndex = (currentIndex - 1) % total;
+            }else{
+                currentIndex = (currentIndex + 1) % total;
+            }
 
             switchImage()
             
@@ -95,7 +116,7 @@
             slider_items[currentIndex].classList.add('active');
         }
 
-        setInterval(slider, timeout)
+        // setInterval(slider, timeout)
     </script>
 </body>
 </html>
