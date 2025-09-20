@@ -107,7 +107,7 @@
         let currentIndex = 0;
 
         // 切換時間(毫秒)
-        let timeout = 2000;
+        let timeout = 5000;
 
         let next = document.querySelector('.slider-next');
         let prev = document.querySelector('.slider-prev');
@@ -142,6 +142,7 @@
 
             switchImage();
             switchDot();
+            resetTimer();
             
         }
         function switchImage(){
@@ -166,6 +167,7 @@
                 currentIndex = Number(i)
                 switchImage();
                 switchDot();
+                resetTimer();
             }
         }
 
@@ -175,7 +177,11 @@
             dots[currentIndex].classList.add('active');
         }
 
-        // setInterval(slider, timeout)
+        timer = setInterval(slider, timeout)
+        function resetTimer(){
+            clearInterval(timer)
+            timer = setInterval(slider, timeout)
+        }
     </script>
 </body>
 </html>
