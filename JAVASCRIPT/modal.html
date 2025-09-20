@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        dialog {
+            width: 60%;
+            border-radius: 10px;
+            border: 0;
+            background-color: pink;
+            box-shadow: 0 0 10px 0 #00000052;
+        }
+        dialog::backdrop {
+            background-color: #67008667;
+            backdrop-filter: blur(5px);
+        }
+    </style>
+</head>
+<body>
+    <a href="#" class="modal-btn">Modal 1</a>
+    <dialog>
+        <div>
+            <h2>title</h2>
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis praesentium sunt deleniti blanditiis unde dolores? Accusamus doloribus illum a non. Architecto maxime aspernatur dignissimos ad voluptatum incidunt nemo. Enim, quibusdam.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea pariatur quidem praesentium necessitatibus voluptates quis quo quam culpa! Nesciunt tenetur expedita, quasi ipsam fugiat necessitatibus deleniti debitis quidem iusto cupiditate.
+            </p>
+            <a href="#" class="modal-close">close</a>
+        </div>
+    </dialog>
+    <script>
+        let modal_btn = document.querySelector('.modal-btn')
+        let modal_close = document.querySelector('.modal-close')
+        let dialog = document.querySelector('dialog')
+
+        modal_btn.onclick = function(){
+            dialog.showModal()
+        }
+        modal_close.onclick = function(){
+            dialog.close()
+        }
+
+
+    </script>
+</body>
+</html>
