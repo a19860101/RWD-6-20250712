@@ -42,10 +42,14 @@
 <body>
     <div class="tab">
         <div class="tab-nav">
-            <a href="#tab-1" class="tab-link active">tab 1</a>
-            <a href="#tab-2" class="tab-link">tab 2</a>
-            <a href="#tab-3" class="tab-link">tab 3</a>
-            <a href="#tab-4" class="tab-link">tab 4</a>
+            <!-- <a href="#tab-1" data-panel="#tab-1" class="tab-link active">tab 1</a>
+            <a href="#tab-2" data-panel="#tab-2" class="tab-link">tab 2</a>
+            <a href="#tab-3" data-panel="#tab-3" class="tab-link">tab 3</a>
+            <a href="#tab-4" data-panel="#tab-4" class="tab-link">tab 4</a> -->
+            <a href="javascript:;" data-panel="#tab-1" class="tab-link active">tab 1</a>
+            <a href="javascript:;" data-panel="#tab-2" class="tab-link">tab 2</a>
+            <a href="javascript:;" data-panel="#tab-3" class="tab-link">tab 3</a>
+            <a href="javascript:;" data-panel="#tab-4" class="tab-link">tab 4</a>
         </div>
         <div class="tab-panel active" id="tab-1">
             <h2>Tab 1</h2>
@@ -87,6 +91,20 @@
         // }
 
         // 方法二：使用href與id
+        // let tab_links = document.querySelectorAll('.tab-link');
+        // let tab_panels = document.querySelectorAll('.tab-panel');
+        // for(let tab_link of tab_links){
+        //     tab_link.onclick = function(){
+        //         document.querySelector('.tab-link.active').classList.remove('active')
+        //         this.classList.add('active')
+
+        //         let href = this.getAttribute('href');
+        //         document.querySelector('.tab-panel.active').classList.remove('active');
+        //         document.querySelector(href).classList.add('active');
+        //     }
+        // }
+
+        // 方法三：使用data與id
         let tab_links = document.querySelectorAll('.tab-link');
         let tab_panels = document.querySelectorAll('.tab-panel');
         for(let tab_link of tab_links){
@@ -94,9 +112,9 @@
                 document.querySelector('.tab-link.active').classList.remove('active')
                 this.classList.add('active')
 
-                let href = this.getAttribute('href');
+                let panel = this.dataset.panel;
                 document.querySelector('.tab-panel.active').classList.remove('active');
-                document.querySelector(href).classList.add('active');
+                document.querySelector(panel).classList.add('active');
             }
         }
     </script>
