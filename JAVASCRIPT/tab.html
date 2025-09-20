@@ -42,10 +42,10 @@
 <body>
     <div class="tab">
         <div class="tab-nav">
-            <a href="#" class="tab-link active">tab 1</a>
-            <a href="#" class="tab-link">tab 2</a>
-            <a href="#" class="tab-link">tab 3</a>
-            <a href="#" class="tab-link">tab 4</a>
+            <a href="#tab-1" class="tab-link active">tab 1</a>
+            <a href="#tab-2" class="tab-link">tab 2</a>
+            <a href="#tab-3" class="tab-link">tab 3</a>
+            <a href="#tab-4" class="tab-link">tab 4</a>
         </div>
         <div class="tab-panel active" id="tab-1">
             <h2>Tab 1</h2>
@@ -72,5 +72,33 @@
             </p>
         </div>
     </div>
+    <script>
+        // 方法一：使用陣列索引
+        // let tab_links = document.querySelectorAll('.tab-link');
+        // let tab_panels = document.querySelectorAll('.tab-panel');
+        // for(let i in tab_links){
+        //     tab_links[i].onclick = function(){
+        //         document.querySelector('.tab-link.active').classList.remove('active');
+        //         this.classList.add('active');
+
+        //         document.querySelector('.tab-panel.active').classList.remove('active');
+        //         tab_panels[i].classList.add('active');
+        //     }
+        // }
+
+        // 方法二：使用href與id
+        let tab_links = document.querySelectorAll('.tab-link');
+        let tab_panels = document.querySelectorAll('.tab-panel');
+        for(let tab_link of tab_links){
+            tab_link.onclick = function(){
+                document.querySelector('.tab-link.active').classList.remove('active')
+                this.classList.add('active')
+
+                let href = this.getAttribute('href');
+                document.querySelector('.tab-panel.active').classList.remove('active');
+                document.querySelector(href).classList.add('active');
+            }
+        }
+    </script>
 </body>
 </html>
