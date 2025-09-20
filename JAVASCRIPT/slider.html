@@ -7,17 +7,36 @@
     <style>
         .slider {
             width: 1200px;
+            aspect-ratio: 2 / 1;
             margin-inline: auto;
             position: relative;
             .slider-item {
                 position: absolute;
                 display: none;
+                opacity: 0;
+                transition: 500ms allow-discrete;
                 &.active {
                     display: block;
+                    opacity: 1;
                 }
             }
         }
+        @starting-style {
+            .slider-item.active {
+                opacity: 0;
+            }
+        }
 
+
+        .slider-nav {
+            position: absolute;
+            bottom: 0;
+            translate: 0 100%;
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            gap:30px;
+        }
     </style>
 </head>
 <body>
@@ -40,6 +59,10 @@
         <div class="slider-item">
             <img src="https://picsum.photos/id/63/1200/600" alt="">
         </div>
+        <div class="slider-nav">
+            <a href="#" class="slider-prev">prev</a>
+            <a href="#" class="slider-next">next</a>
+        </div>
     </div>
     <script>
         // 所有輪播物件
@@ -52,7 +75,7 @@
         let currentIndex = 0;
 
         // 切換時間(毫秒)
-        let timeout = 1000;
+        let timeout = 5000;
 
         function slider(){
             
@@ -62,7 +85,12 @@
             //     currentIndex += 1
             // }
 
-            currentIndex = (currentIndex + 1) % total
+            currentIndex = (currentIndex + 1) % total;
+
+            switchImage()
+            
+        }
+        function switchImage(){
             document.querySelector('.slider-item.active').classList.remove('active')
             slider_items[currentIndex].classList.add('active');
         }
