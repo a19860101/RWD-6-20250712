@@ -4,9 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .container {
+            width: 900px;
+            display: grid;
+            margin-inline: auto;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+        .item {
+            background-color: #eee;
+            padding: 15px;
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
+
+    </div>
     <script>
+
+        let el = document.querySelector('.container')
         let url = 'https://data.moenv.gov.tw/api/v2/aqx_p_432?api_key=58d6040c-dca7-407f-a244-d0bfdfa8144a&limit=1000&sort=ImportDate%20desc&format=JSON'
         fetch(url)
         .then(res=>res.json())
@@ -15,7 +33,31 @@
             console.log(data['records'])
             for(let r of data['records'] ){
                 // console.log(r)
-                console.log( r.county,r.sitename,r.aqi)
+                // console.log( r.county,r.sitename,r.aqi)
+                let item = document.createElement('div')
+                item.classList.add('item')
+
+                let county = document.createElement('div');
+                let sitename = document.createElement('div');
+                let aqi = document.createElement('div');
+                let pm25 = document.createElement('div');
+
+                county.append(r.county)
+                sitename.append(r.sitename)
+                aqi.append(`空氣品質指標:${r.aqi}`)
+                pm25.append(`PM2.5: ${r['pm2.5']}`)
+
+                item.append(county, sitename, aqi, pm25)
+                el.append(item)
+
+                if(r.aqi <= 50){
+                    item.style.backgroundColor = '#e5f4ef'
+                }else if(r.aqi <= 100){
+                    item.style.backgroundColor = '#ffffe9'
+                }else if(r.aqi <= 150){
+                    item.style.backgroundColor = '#fff4ea'
+                }
+
             }
         })
     </script>
