@@ -16,14 +16,28 @@
             background-color: #eee;
             padding: 15px;
         }
+
+        .select_county {
+            width: 900px;
+            margin-inline: auto;
+            padding-block: 15px;
+            select {
+                width: 100%;
+                padding: 10px;
+                font-size: 24px;
+            }
+        }
     </style>
 </head>
 <body>
+    <div class="select_county">
+        <select name="" id="">
+        </select>
+    </div>
     <div class="container">
 
     </div>
     <script>
-
         let el = document.querySelector('.container')
         let url = 'https://data.moenv.gov.tw/api/v2/aqx_p_432?api_key=58d6040c-dca7-407f-a244-d0bfdfa8144a&limit=1000&sort=ImportDate%20desc&format=JSON'
         fetch(url)
@@ -31,9 +45,23 @@
         .then(data=>{
             // console.log(data.records)
             console.log(data['records'])
+            //縣市
+            let counties = [...new Set(data['records'].map(data=>data.county))]
+            console.log(counties)
+            let select = document.querySelector('select')
+            for(let i in counties){
+                let option = document.createElement('option')
+                option.append(counties[i])
+                option.value = counties[i]
+                select.append(option)
+                console.log(i)
+            }
             for(let r of data['records'] ){
                 // console.log(r)
                 // console.log( r.county,r.sitename,r.aqi)
+
+                
+
                 let item = document.createElement('div')
                 item.classList.add('item')
 
