@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .slider {
+            width: 1200px;
+            margin-inline: auto;
+            position: relative;
+            .slider-item {
+                position: absolute;
+                display: none;
+                &.active {
+                    display: block;
+                }
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="slider">
+        <div class="slider-item active">
+            <img src="https://picsum.photos/id/13/1200/600" alt="">
+        </div>
+        <div class="slider-item">
+            <img src="https://picsum.photos/id/23/1200/600" alt="">
+        </div>
+        <div class="slider-item">
+            <img src="https://picsum.photos/id/33/1200/600" alt="">
+        </div>
+        <div class="slider-item">
+            <img src="https://picsum.photos/id/43/1200/600" alt="">
+        </div>
+        <div class="slider-item">
+            <img src="https://picsum.photos/id/53/1200/600" alt="">
+        </div>
+        <div class="slider-item">
+            <img src="https://picsum.photos/id/63/1200/600" alt="">
+        </div>
+    </div>
+</body>
+</html>
