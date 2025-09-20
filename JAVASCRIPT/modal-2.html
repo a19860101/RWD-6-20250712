@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        dialog {
+            width: 60%;
+            border-radius: 10px;
+            border: 0;
+            background-color: pink;
+            box-shadow: 0 0 10px 0 #00000052;
+            transition: 600ms allow-discrete;
+            opacity: 0;
+            translate: 0 30px;
+        }
+        dialog:open {
+            opacity: 1;
+            translate: 0;
+        }
+        @starting-style {
+            dialog:open {
+                opacity: 0;
+                translate: 0 30px;
+            }
+        }
+        
+        dialog::backdrop {
+            background-color: #67008667;
+            backdrop-filter: blur(5px);
+            opacity: 0;
+            transition: 300ms;
+        }
+
+        dialog:open::backdrop {
+            opacity: 1;
+        }
+        @starting-style {
+            dialog:open::backdrop {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#" class="modal-btn" data-modal="#m1">Modal 1</a>
+    <a href="#" class="modal-btn" data-modal="#m2">Modal 2</a>
+    <a href="#" class="modal-btn" data-modal="#m3">Modal 3</a>
+    <dialog id="m1">
+        <div>
+            <h2>title</h2>
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis praesentium sunt deleniti blanditiis unde dolores? Accusamus doloribus illum a non. Architecto maxime aspernatur dignissimos ad voluptatum incidunt nemo. Enim, quibusdam.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea pariatur quidem praesentium necessitatibus voluptates quis quo quam culpa! Nesciunt tenetur expedita, quasi ipsam fugiat necessitatibus deleniti debitis quidem iusto cupiditate.
+            </p>
+            <a href="#" class="modal-close">close</a>
+        </div>
+    </dialog>
+    <dialog id="m2">
+        <div>
+            <h2>title 2</h2>
+            <p>
+                每月前往尋找方向接受接下來些什麼，簡體百姓二級超市討論關心大會知道報價所需綜合一把小心，原文複製虛擬真是，排行畢竟對她放下一遍下載，一切大多數別人但我手指，幫助眼裡我看有什麼距離，再度奧客成本，革命既然承擔別的創新自信我家有利於，過來老公，圖書拍攝緊張風。
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea pariatur quidem praesentium necessitatibus voluptates quis quo quam culpa! Nesciunt tenetur expedita, quasi ipsam fugiat necessitatibus deleniti debitis quidem iusto cupiditate.
+            </p>
+            <a href="#" class="modal-close">close</a>
+        </div>
+    </dialog>
+    <dialog id="m3">
+        <div>
+            <h2>title 3</h2>
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis praesentium sunt deleniti blanditiis unde dolores? Accusamus doloribus illum a non. Architecto maxime aspernatur dignissimos ad voluptatum incidunt nemo. Enim, quibusdam.
+            </p>
+            <p>
+                今年收到，比賽首頁最後體現保健一顆開放對於程度不能下載自身位置讓我們，快速填寫私人幫你達到瘋狂對外，審批電信，資料庫是因為二十討論區之外手機證件動畫，本次麻煩總數，花蓮群眾保障像是模樣民族優惠看過令人飲食重要快速飛機，編輯近期親愛的，網址出處其實，擁有完。
+            </p>
+            <a href="#" class="modal-close">close</a>
+        </div>
+    </dialog>
+    <script>
+        let modal_btns = document.querySelectorAll('.modal-btn')
+        let closes = document.querySelectorAll('.modal-close')
+        for(let modal_btn of modal_btns){
+            modal_btn.onclick = function(){
+                let modal = this.dataset.modal
+                document.querySelector(modal).showModal()
+                for(let close of closes){
+                    close.onclick = function(){
+                        document.querySelector(modal).close()
+                    }
+                }
+            }
+        }
+        
+        
+
+    
+    </script>
+</body>
+</html>
