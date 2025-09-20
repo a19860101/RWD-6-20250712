@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let url = 'https://data.moenv.gov.tw/api/v2/aqx_p_432?api_key=58d6040c-dca7-407f-a244-d0bfdfa8144a&limit=1000&sort=ImportDate%20desc&format=JSON'
+        fetch(url)
+        .then(res=>res.json())
+        .then(data=>{
+            // console.log(data.records)
+            console.log(data['records'])
+            for(let r of data['records'] ){
+                // console.log(r)
+                console.log( r.county,r.sitename,r.aqi)
+            }
+        })
+    </script>
+</body>
+</html>
