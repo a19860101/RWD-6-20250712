@@ -140,7 +140,8 @@
                 currentIndex = (currentIndex + 1) % total;
             }
 
-            switchImage()
+            switchImage();
+            switchDot();
             
         }
         function switchImage(){
@@ -158,6 +159,21 @@
         // 設定slider-dot動態樣式
         let dots = document.querySelectorAll('.slider-dot');
         dots[0].classList.add('active')
+
+        // 設定slider-dot功能
+        for(let i in dots){
+            dots[i].onclick = function(){
+                currentIndex = Number(i)
+                switchImage();
+                switchDot();
+            }
+        }
+
+        // 切換dots樣式
+        function switchDot(){
+            document.querySelector('.slider-dot.active').classList.remove('active')
+            dots[currentIndex].classList.add('active');
+        }
 
         // setInterval(slider, timeout)
     </script>
