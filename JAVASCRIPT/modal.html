@@ -29,6 +29,17 @@
         dialog::backdrop {
             background-color: #67008667;
             backdrop-filter: blur(5px);
+            opacity: 0;
+            transition: 300ms;
+        }
+
+        dialog:open::backdrop {
+            opacity: 1;
+        }
+        @starting-style {
+            dialog:open::backdrop {
+                opacity: 0;
+            }
         }
     </style>
 </head>
@@ -58,7 +69,7 @@
             dialog.close()
         }
 
-
+    
     </script>
 </body>
 </html>
