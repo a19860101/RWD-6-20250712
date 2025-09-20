@@ -11,20 +11,21 @@
             aspect-ratio: 2 / 1;
             margin-inline: auto;
             position: relative;
-            .slider-item {
-                position: absolute;
-                display: none;
-                opacity: 0;
-                transition: 500ms allow-discrete;
-                &.active {
-                    display: block;
-                    opacity: 1;
-                }
-            }
         }
+
+        .slider-item {
+            position: absolute;
+            display: none;
+            opacity: 0;
+            transition: 500ms allow-discrete;
+            &.active {
+                display: block;
+                opacity: 1;
+            }
+        }   
         @starting-style {
             .slider-item.active {
-                opacity: 1;
+                opacity: 0;
             }
         }
 
@@ -40,6 +41,31 @@
             padding-block:15px;
             a {
                 color: #000;
+            }
+        }
+
+        .slider-dots {
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            z-index: 99;
+            display: flex;
+            justify-content: center;
+            padding-block: 15px;
+            gap: 15px;
+            .slider-dot {
+                width: 15px;
+                height: 15px;
+                border-radius: 50%;;
+                background-color: #e1e1e1;
+                cursor: pointer;
+                transition: 300ms;
+                &.active {
+                    background-color: #cf4343;
+                }
+                &:hover {
+                    background-color: #cf4343;
+                }
             }
         }
     </style>
@@ -68,6 +94,7 @@
             <a href="#" class="slider-prev"><i class="fa-solid fa-circle-chevron-left fa-xl"></i></a>
             <a href="#" class="slider-next"><i class="fa-solid fa-circle-chevron-right fa-xl"></i></a>
         </div>
+        <div class="slider-dots"></div>
     </div>
     <script>
         // 所有輪播物件
@@ -120,6 +147,17 @@
             document.querySelector('.slider-item.active').classList.remove('active')
             slider_items[currentIndex].classList.add('active');
         }
+
+        // 產生slider-dot
+        for(let i=0;i<total;i++){
+            let dot = document.createElement('span');
+            dot.classList.add('slider-dot')
+            document.querySelector('.slider-dots').append(dot);
+        }
+
+        // 設定slider-dot動態樣式
+        let dots = document.querySelectorAll('.slider-dot');
+        dots[0].classList.add('active')
 
         // setInterval(slider, timeout)
     </script>
