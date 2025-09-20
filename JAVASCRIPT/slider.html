@@ -41,5 +41,33 @@
             <img src="https://picsum.photos/id/63/1200/600" alt="">
         </div>
     </div>
+    <script>
+        // 所有輪播物件
+        let slider_items = document.querySelectorAll('.slider-item')
+
+        // 輪播物件數量
+        let total = slider_items.length;
+
+        // 目前所在的index
+        let currentIndex = 0;
+
+        // 切換時間(毫秒)
+        let timeout = 1000;
+
+        function slider(){
+            
+            // if(currentIndex == total - 1){
+            //     currentIndex = 0
+            // }else{
+            //     currentIndex += 1
+            // }
+
+            currentIndex = (currentIndex + 1) % total
+            document.querySelector('.slider-item.active').classList.remove('active')
+            slider_items[currentIndex].classList.add('active');
+        }
+
+        setInterval(slider, timeout)
+    </script>
 </body>
 </html>
