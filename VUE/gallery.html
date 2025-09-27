@@ -36,8 +36,9 @@
 </head>
 <body>
     <div id="app">
+        <h2>{{name}} - {{show_color_name}}</h2>
         <div class="main">
-            <img :src="`images/${products[current_index].img}`" alt="">
+            <img :src="show_main_img" alt="">
         </div>
         <div class="thumb">
             <a href="#" v-for="(p,idx) of products" class="thumb-link">
@@ -85,6 +86,15 @@
                 switch_image(idx){
                     this.current_index = idx;
                 }
+            },
+            computed:{
+                show_color_name(){
+                    return this.products[this.current_index].color_name
+                },
+                show_main_img(){
+                    return `images/${this.products[this.current_index].img}`
+                }
+
             }
         }).mount('#app')
     </script>
