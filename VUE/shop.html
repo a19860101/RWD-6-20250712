@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Huninn&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Nunito', 'Huninn';
+        }
+        img {
+            width: 100%;
+        }
+        .container {
+            max-width: 960px;
+            margin-inline: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+            gap:25px;
+        }
+        .product-cover {
+            aspect-ratio: 4 / 3;
+            img {
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <div v-for="p of products">
+                <div class="product-cover">
+                    <img :src="p.image" alt="">
+                </div>
+                <div class="product-body">
+                    <h3>{{p.title}}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        Vue.createApp({
+            data(){
+                return{
+                    products:[]
+                }
+            },
+            created(){
+                let url = 'https://fakestoreapi.com/products'
+                fetch(url).then(res=>res.json())
+                .then(data => {
+                    this.products = data;
+                })
+            }
+        }).mount('#app')
+    </script>    
+</body>
+</html>
