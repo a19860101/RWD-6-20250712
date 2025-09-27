@@ -129,9 +129,12 @@
                     <a href="#" @click="remove_item(idx)">移除</a>
                     <hr>
                 </div>
-                <a href="#" @click="clear_item()">clear</a>
-                <div>
+                <a href="#" @click="clear_item()" v-if="carts.length > 0">clear</a>
+                <div v-if="carts.length > 0">
                     Total: {{total}}
+                </div>
+                <div v-else>
+                    購物車是空的!
                 </div>
                 <a href="#" class="carts-close" @click="isOpen = false"><i class="fa-solid fa-xmark fa-lg"></i></a>
             </div>
