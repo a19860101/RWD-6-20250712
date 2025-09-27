@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>{{title}}</h1>
+        <ul>
+            <li v-for="(item,idx) of items">{{idx+1}} / {{item}}</li>
+        </ul>
+        <div>
+            <input type="text" v-model="qty">
+            <select name="" id="" v-model="qty">
+                <option  v-for="i in 20" :value="i">{{i}}</option>
+            </select>
+        </div>
+        <div>
+            <div v-if="qty > 10">庫存充足</div>
+            <div v-else-if="qty > 0">低庫存</div>
+            <div v-else>補貨中</div>
+        </div>
+        <img v-bind:src="img" alt="">
+        <img :src="img" alt="">
+        <a :href="link">Google</a>
+        <div>
+            <input type="checkbox" v-model="skill" value="photoshop">
+            <input type="checkbox" v-model="skill" value="html">
+            <input type="checkbox" v-model="skill" value="css">
+        </div>
+        <div>
+            <div v-for="s of skill">{{s}}</div>
+        </div>
+    </div>
+
+    <script>
+        Vue.createApp({
+            data(){
+                return {
+                    title: 'Hello Vue',
+                    items: ['hello',123,'qwerty','poiuy'],
+                    qty: 0,
+                    img: 'https://picsum.photos/id/23/200',
+                    link: 'https://google.com',
+                    skill: []
+
+                }
+            }
+        }).mount('#app')
+    </script>
+</body>
+</html>
