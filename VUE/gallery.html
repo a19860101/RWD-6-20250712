@@ -32,6 +32,9 @@
                 height: 100%;
             }
         }
+        .active {
+            opacity: .3;
+        }
     </style>
 </head>
 <body>
@@ -43,7 +46,10 @@
         <div class="thumb">
             <a href="#" v-for="(p,idx) of products" class="thumb-link">
                 <!-- <img :src="`images/${p.img}`" alt="" @click="switch_image(idx)"> -->
-                <img :src="`images/${p.img}`" alt="" @click="current_index=idx">
+                <img 
+                    :src="`images/${p.img}`" alt="" 
+                    @click="current_index=idx" 
+                    :class="{active: current_index==idx}">
             </a>
         </div>
     </div>    
