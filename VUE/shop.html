@@ -123,13 +123,13 @@
         </nav>
         <div class="carts" :class="{active: isOpen}">
             <div class="wrapper">
-                <div v-for="c of carts">
+                <div v-for="(c,idx) of carts">
                     <div>{{c.title}}</div>
                     <div>${{c.price}}</div>
-                    <a href="#">移除</a>
+                    <a href="#" @click="remove_item(idx)">移除</a>
                     <hr>
                 </div>
-                <a href="#" @click="carts.length = 0">clear</a>
+                <a href="#" @click="clear_item()">clear</a>
                 <a href="#" class="carts-close" @click="isOpen = false"><i class="fa-solid fa-xmark fa-lg"></i></a>
             </div>
         </div>
@@ -163,8 +163,15 @@
                 add_to_cart(p){
                     this.carts.push(p)
                 },
-                remove_item(){
-
+                remove_item(idx){
+                    if(confirm('確認移除？')){
+                        this.carts.splice(idx,1);
+                    }
+                },
+                clear_item(){
+                    if(confirm('確認清空？')){
+                        this.carts.length = 0;
+                    }
                 }
             },
             created(){
