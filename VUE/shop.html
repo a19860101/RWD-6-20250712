@@ -85,6 +85,8 @@
             visibility: hidden;
             transition: 500ms;
             .wrapper{
+                padding-top: 100px;
+                padding-inline: 30px;
                 width: 400px;
                 height: 100vh;
                 background-color: #FFF2EF;
@@ -121,6 +123,13 @@
         </nav>
         <div class="carts" :class="{active: isOpen}">
             <div class="wrapper">
+                <div v-for="c of carts">
+                    <div>{{c.title}}</div>
+                    <div>${{c.price}}</div>
+                    <a href="#">移除</a>
+                    <hr>
+                </div>
+                <a href="#" @click="carts.length = 0">clear</a>
                 <a href="#" class="carts-close" @click="isOpen = false"><i class="fa-solid fa-xmark fa-lg"></i></a>
             </div>
         </div>
@@ -153,6 +162,9 @@
             methods:{
                 add_to_cart(p){
                     this.carts.push(p)
+                },
+                remove_item(){
+
                 }
             },
             created(){
