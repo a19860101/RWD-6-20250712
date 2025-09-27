@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        img {
+            width: 100%;
+            display: block;
+        }
+        .main {
+            width: 600px;
+            aspect-ratio: 1 /1;
+            img {
+                object-fit: cover;
+                height: 100%;
+            }
+            margin-bottom: 15px;
+        }
+        .thumb {
+            display: grid;
+            width: 600px;
+            grid-template-columns: repeat(5, 1fr);
+            gap:15px;
+            a {
+                aspect-ratio: 1/1;
+            }
+            img {
+                object-fit: cover;
+                height: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="main">
+            <img :src="`images/${products[0].img}`" alt="">
+        </div>
+        <div class="thumb">
+            <a href="#" v-for="p of products" class="thumb-link">
+                <img :src="`images/${p.img}`" alt="">
+            </a>
+        </div>
+    </div>    
+    <script>
+        Vue.createApp({
+            data(){
+                return {
+                    name:'iPhone 17',
+                    products:[
+                        {
+                            color_name:'薰衣草紫色',
+                            hex:'',
+                            img:'iphone-17-finish-select-202509-lavender.webp'
+                        },
+                        {
+                            color_name:'鼠尾草綠色',
+                            hex:'',
+                            img:'iphone-17-finish-select-202509-sage.webp'
+                        },
+                        {
+                            color_name:'霧藍色',
+                            hex:'',
+                            img:'iphone-17-finish-select-202509-mistblue.webp',
+                        },
+                        {
+                            color_name:'白色',
+                            hex:'',
+                            img:'iphone-17-finish-select-202509-white.webp'
+                        },
+                        {
+                            color_name:'黑色',
+                            hex:'',
+                            img:'iphone-17-finish-select-202509-black.webp'
+                        },
+                    ]
+                }
+            }
+        }).mount('#app')
+    </script>
+</body>
+</html>
