@@ -37,11 +37,12 @@
 <body>
     <div id="app">
         <div class="main">
-            <img :src="`images/${products[0].img}`" alt="">
+            <img :src="`images/${products[current_index].img}`" alt="">
         </div>
         <div class="thumb">
-            <a href="#" v-for="p of products" class="thumb-link">
-                <img :src="`images/${p.img}`" alt="">
+            <a href="#" v-for="(p,idx) of products" class="thumb-link">
+                <!-- <img :src="`images/${p.img}`" alt="" @click="switch_image(idx)"> -->
+                <img :src="`images/${p.img}`" alt="" @click="current_index=idx">
             </a>
         </div>
     </div>    
@@ -50,6 +51,7 @@
             data(){
                 return {
                     name:'iPhone 17',
+                    current_index: 0,
                     products:[
                         {
                             color_name:'薰衣草紫色',
@@ -77,6 +79,11 @@
                             img:'iphone-17-finish-select-202509-black.webp'
                         },
                     ]
+                }
+            },
+            methods:{
+                switch_image(idx){
+                    this.current_index = idx;
                 }
             }
         }).mount('#app')
