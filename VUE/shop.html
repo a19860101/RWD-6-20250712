@@ -165,6 +165,13 @@
                     isOpen: false
                 }
             },
+            watch:{
+                'carts.length'(newLength, oldLength){
+                    if(newLength > oldLength){
+                        console.log('您新增了一個商品!')
+                    }
+                }
+            },
             methods:{
                 add_to_cart(p){
                     this.carts.push(p)
