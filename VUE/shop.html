@@ -130,6 +130,9 @@
                     <hr>
                 </div>
                 <a href="#" @click="clear_item()">clear</a>
+                <div>
+                    Total: {{total}}
+                </div>
                 <a href="#" class="carts-close" @click="isOpen = false"><i class="fa-solid fa-xmark fa-lg"></i></a>
             </div>
         </div>
@@ -171,6 +174,20 @@
                 clear_item(){
                     if(confirm('確認清空？')){
                         this.carts.length = 0;
+                    }
+                }
+            },
+            computed:{
+                carts_price(){
+                    
+                    return this.carts.map(data=>data.price);
+                },
+                total(){
+                    if(this.carts.length == 0){
+                        return 0
+                    }else{
+
+                        return this.carts_price.reduce((a,b)=>a+b);
                     }
                 }
             },
