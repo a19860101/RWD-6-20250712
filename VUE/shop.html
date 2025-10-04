@@ -169,6 +169,7 @@
                 'carts.length'(newLength, oldLength){
                     if(newLength > oldLength){
                         console.log('您新增了一個商品!')
+                        this.showNotification('您新增了一個商品!')
                     }
                 }
             },
@@ -185,6 +186,9 @@
                     if(confirm('確認清空？')){
                         this.carts.length = 0;
                     }
+                },
+                showNotification(message){
+                    alert(message)
                 }
             },
             computed:{
