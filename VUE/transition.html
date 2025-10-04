@@ -11,6 +11,16 @@
             background-color: #ccc;
             margin-bottom: 15px;
         }
+        .list-enter-active,.list-leave-active {
+            transition: all 0.5s;
+        }
+        .list-enter-from, .list-leave-to {
+            opacity: 0;
+            translate: 0 100%;
+        }
+
+        /* enter-from enter-active enter-to
+        leave-from leave-active leave-to */
     </style>
 </head>
 <body>
@@ -18,9 +28,12 @@
         <button @click="add()">add</button>
         <hr>
         <div>
-            <div v-for="data of datas" class="list">
-                {{data}}
-            </div>
+            <transition-group name="list" tag="">
+                <div v-for="data of datas" class="list" :key="data">
+                    {{data}}
+                    <a href="#" @click="remove(data)">delete</a>
+                </div>
+            </transition-group>
         </div>
     </div>
     <script>
@@ -33,6 +46,9 @@
             methods:{
                 add(){
                     this.datas.push(Date.now())
+                },
+                remove(id){
+                    this.datas = this.datas.filter(data=>data != id)
                 }
             }
         }).mount('#app')
