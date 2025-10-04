@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>{{title}}</h1>
+        <app-title></app-title>
+        <app-title></app-title>
+        <app-title></app-title>
+        <app-btn>click</app-btn>
+        <app-btn>註冊</app-btn>
+    </div>
+    <script>
+        Vue.createApp({
+            data(){
+                return {
+                    title: '區域註冊組件'
+                }
+            },
+            components:{
+                'app-title':{
+                    template: '<h1>{{title}}</h1>',
+                    data(){
+                        return {
+                            title: 'hello vue'
+                        }
+                    }
+                },
+                'app-btn': {
+                    template: '<button><slot></slot></button>'
+                }
+            }
+        }).mount('#app')
+          
+    </script>
+</body>
+</html>
