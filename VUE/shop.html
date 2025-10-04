@@ -137,13 +137,32 @@
                 }
             }
         }
+        .cart-icon {
+            position: relative;
+
+            .cart-number {
+                position: absolute;
+                top: 0;
+                right:0;
+                translate: 50% -50%;
+                background-color: #ff4d4d;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                color: #fff;
+                display: grid;
+                font-size: 14px;
+                place-content: center;
+            }
+        }
     </style>
 </head>
 <body>
     <div id="app">
         <nav>
             <a href="#">Shop</a>
-            <div>
+            <div class="cart-icon">
+                <span class="cart-number" v-if="carts.length > 0">{{carts.length}}</span>
                 <a href="#" @click="isOpen = true"><i class="fa-solid fa-cart-shopping fa-lg"></i></a>
             </div>
         </nav>
