@@ -6,10 +6,11 @@ export default {
             title: 'Hello Vue',
             
             todos: [
-                'item 1',
-                'item 2',
-                'item 3',
-
+                {
+                    id: 1,
+                    title: 'list 1',
+                    isCompleted: true
+                }
             ]
         }
     },
@@ -22,7 +23,11 @@ export default {
     `,
     methods: {
         add_todo(data){
-            this.todos.push(data)
+            this.todos.push({
+                id: Date.now(),
+                title: data,
+                isCompleted: false
+            })
         }
     }
 }
