@@ -6,71 +6,37 @@
     <title>Document</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <style>
-        .list {
-            padding: 15px;
-            background-color: #ccc;
-            margin-bottom: 15px;
-            width: 100%;
-        }
-        .list-enter-active,.list-leave-active, .list-move {
-            transition: all 0.5s;
-        }
-        /* .list-enter-from, .list-leave-to {
+        .panel {
+            display: none;
             opacity: 0;
-            translate: 100% 0;
-        } */
-        .list-enter-from {
-            opacity: 0;
-            translate: -100% 0;
-         }
-        .list-leave-to {
-            opacity: 0;
-            translate: 100% 0;
+            transition: 500ms allow-discrete;
         }
-        .list-leave-active {
-            position: absolute;
+        .panel.active {
+            display: block;
+            opacity: 1;
         }
-
-        /* enter-from enter-active enter-to
-        leave-from leave-active leave-to */
-
-        /* 
-            enter-from enter-active enter-to
-
-
-
-            leave-from leave-active leave-to
-        */
+        @starting-style {
+            .panel.active {
+                opacity: 0;
+            }
+        }
     </style>
 </head>
 <body>
     <div id="app">
-        <button @click="add()">add</button>
-        <hr>
-        <div>
-            <transition-group name="list" tag="">
-                <div v-for="data of datas" class="list" :key="data">
-                    {{data}}
-                    <a href="#" @click="remove(data)">delete</a>
-                </div>
-            </transition-group>
+        <button @click="isOpen = !isOpen">toggle</button>
+        <div class="panel" :class="{'active': isOpen}">
+            <h2>title</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto nisi, quisquam, officiis ipsa hic numquam ratione, maiores culpa nemo accusantium voluptatem sint illum tempora blanditiis quidem dolore eveniet porro modi.</p>
         </div>
     </div>
     <script>
         Vue.createApp({
             data(){
                 return {
-                    datas:[]
+                    isOpen: false
                 }
             },
-            methods:{
-                add(){
-                    this.datas.push(Date.now())
-                },
-                remove(id){
-                    this.datas = this.datas.filter(data=>data != id)
-                }
-            }
         }).mount('#app')
     </script>
 </body>
