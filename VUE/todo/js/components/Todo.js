@@ -1,3 +1,4 @@
+import TodoCreate from './TodoCreate.js'
 export default {
     data(){
         return {
@@ -6,9 +7,11 @@ export default {
             todos: ['item','item2']
         }
     },
+    components:{
+        TodoCreate
+    },
     template:`
-        <input type="text" v-model="event">
-        <button @click="add()">新增事項</button>
+        <TodoCreate></TodoCreate>
         <ul>
             <li v-for='todo of todos'>{{todo}}</li>
         </ul>

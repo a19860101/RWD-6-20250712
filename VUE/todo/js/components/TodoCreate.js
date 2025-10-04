@@ -1,0 +1,6 @@
+export default {
+    template: `
+        <input type="text" v-model="event">
+        <button @click="add()">新增事項</button>
+    `
+}
