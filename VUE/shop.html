@@ -117,11 +117,24 @@
             bottom: 0;
             width: 350px;
             .toast {
-                padding: 15px;
                 border: 1px solid #888;
                 background-color: #fff;
                 border-radius: 4px;
                 margin-bottom: 15px;
+                overflow: hidden;
+                .toast-header {
+                    background-color: #eee;
+                    padding: 5px 15px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    i {
+                        cursor: pointer;
+                    }
+                }
+                .toast-body {
+                    padding: 15px;
+                }
             }
         }
     </style>
@@ -169,8 +182,14 @@
             </div>
         </div>
         <div class="toast-container" v-if="toasts.length > 0">
-            <div class="toast" v-for="t of toasts">
-                {{t.message}}
+            <div class="toast"  v-for="t of toasts">
+                <div class="toast-header">
+                    通知
+                    <i class="fa-solid fa-xmark" @click="removeToast(t.id)"></i>
+                </div>
+                <div class="toast-body">
+                    {{t.message}}
+                </div>
             </div>
         </div>
     </div>
