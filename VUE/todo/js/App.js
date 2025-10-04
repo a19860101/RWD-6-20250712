@@ -1,15 +1,13 @@
+import Todo from './components/Todo.js'
 export default {
     data(){
-        return {
-            title: 'Hello Vue',
-            event: '',
-            todos: ['item','item2']
-        }
+        return{}
     },
-    methods: {
-        add(){
-            this.todos.push(this.event);
-            this.event = ''
-        }
+    template:`
+        <Todo></Todo>    
+    `,
+    components:{
+        Todo
     }
+    
 }
