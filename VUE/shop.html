@@ -114,12 +114,15 @@
         .toast-container {
             position: fixed;
             right: 15px;
-            bottom: 15px;
+            bottom: 0;
             width: 350px;
-            padding: 15px;
-            border: 1px solid #888;
-            background-color: #fff;
-            border-radius: 4px;
+            .toast {
+                padding: 15px;
+                border: 1px solid #888;
+                background-color: #fff;
+                border-radius: 4px;
+                margin-bottom: 15px;
+            }
         }
     </style>
 </head>
@@ -167,7 +170,7 @@
         </div>
         <div class="toast-container" v-if="toasts.length > 0">
             <div class="toast" v-for="t of toasts">
-                {{t}}
+                {{t.message}}
             </div>
         </div>
     </div>
@@ -209,7 +212,19 @@
                     alert(message)
                 },
                 showToast(message){
-                    this.toasts.push(message)
+                    const t = {
+                        id: Date.now(),
+                        // message: message
+                        message
+                    }
+                    this.toasts.push(t)
+
+                    setTimeout(()=>{
+                        this.removeToast(t.id)
+                    },5000)
+                },
+                removeToast(id){
+                    this.toasts = this.toasts.filter(data=>data.id != id)
                 }
             },
             computed:{
