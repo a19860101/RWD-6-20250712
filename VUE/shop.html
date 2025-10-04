@@ -156,6 +156,24 @@
                 place-content: center;
             }
         }
+        .toast {
+            width: 100%;
+        }
+        .toast-enter-active, .toast-leave-active, .toast-move {
+            transition: 0.3s;
+        }
+        .toast-enter-from {
+            opacity: 0;
+            translate: 0 100%;
+        }
+        .toast-leave-to {
+            opacity: 0;
+            translate: 100% 0 ;
+        }
+        .toast-leave-active{
+            position: absolute;
+        }
+
     </style>
 </head>
 <body>
@@ -202,8 +220,8 @@
             </div>
         </div>
         <div class="toast-container">
-            <!-- <transition-group name="toast"> -->
-                <div class="toast"  v-for="t of toasts">
+            <transition-group name="toast" tag="div">
+                <div class="toast"  v-for="t of toasts" :key="t.id">
                     <div class="toast-header">
                         通知
                         <i class="fa-solid fa-xmark" @click="removeToast(t.id)"></i>
