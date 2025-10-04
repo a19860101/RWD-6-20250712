@@ -4,7 +4,7 @@ export default {
     data(){
         return {
             title: 'Hello Vue',
-            event: '',
+            
             todos: [
                 'item 1',
                 'item 2',
@@ -17,13 +17,12 @@ export default {
         TodoCreate,TodoList
     },
     template:`
-        <TodoCreate></TodoCreate>
+        <TodoCreate @addTodo="add_todo"></TodoCreate>
         <TodoList :todos="todos"></TodoList>
     `,
     methods: {
-        add(){
-            this.todos.push(this.event);
-            this.event = ''
+        add_todo(data){
+            this.todos.push(data)
         }
     }
 }
