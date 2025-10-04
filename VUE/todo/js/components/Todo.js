@@ -1,20 +1,24 @@
 import TodoCreate from './TodoCreate.js'
+import TodoList from './TodoList.js'
 export default {
     data(){
         return {
             title: 'Hello Vue',
             event: '',
-            todos: ['item','item2']
+            todos: [
+                'item 1',
+                'item 2',
+                'item 3',
+
+            ]
         }
     },
     components:{
-        TodoCreate
+        TodoCreate,TodoList
     },
     template:`
         <TodoCreate></TodoCreate>
-        <ul>
-            <li v-for='todo of todos'>{{todo}}</li>
-        </ul>
+        <TodoList :todos="todos"></TodoList>
     `,
     methods: {
         add(){
