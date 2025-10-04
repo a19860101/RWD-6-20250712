@@ -7,28 +7,30 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <style>
         .panel {
-            display: none;
+            background-color: #ccc;
+            padding: 15px;
+        }
+        .fade-enter-active,
+        .fade-leave-active {
+            transition: 300ms;
+        }
+        .fade-enter-from,
+        .fade-leave-to {
             opacity: 0;
-            transition: 500ms allow-discrete;
+            translate: 0 30px
         }
-        .panel.active {
-            display: block;
-            opacity: 1;
-        }
-        @starting-style {
-            .panel.active {
-                opacity: 0;
-            }
-        }
+        
     </style>
 </head>
 <body>
     <div id="app">
         <button @click="isOpen = !isOpen">toggle</button>
-        <div class="panel" :class="{'active': isOpen}">
-            <h2>title</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto nisi, quisquam, officiis ipsa hic numquam ratione, maiores culpa nemo accusantium voluptatem sint illum tempora blanditiis quidem dolore eveniet porro modi.</p>
-        </div>
+        <transition name="fade" tag="div">
+            <div class="panel" v-if="isOpen">
+                <h2>title</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto nisi, quisquam, officiis ipsa hic numquam ratione, maiores culpa nemo accusantium voluptatem sint illum tempora blanditiis quidem dolore eveniet porro modi.</p>
+            </div>
+        </transition>
     </div>
     <script>
         Vue.createApp({
