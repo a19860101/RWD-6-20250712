@@ -111,6 +111,16 @@
                 }
             }
         }
+        .toast-container {
+            position: fixed;
+            right: 15px;
+            bottom: 15px;
+            width: 350px;
+            padding: 15px;
+            border: 1px solid #888;
+            background-color: #fff;
+            border-radius: 4px;
+        }
     </style>
 </head>
 <body>
@@ -155,6 +165,11 @@
                 </div>
             </div>
         </div>
+        <div class="toast-container" v-if="toasts.length > 0">
+            <div class="toast" v-for="t of toasts">
+                {{t}}
+            </div>
+        </div>
     </div>
     <script>
         Vue.createApp({
@@ -162,14 +177,17 @@
                 return{
                     products:[],
                     carts:[],
-                    isOpen: false
+                    isOpen: false,
+                    toasts:[]
                 }
             },
             watch:{
                 'carts.length'(newLength, oldLength){
                     if(newLength > oldLength){
                         console.log('您新增了一個商品!')
-                        this.showNotification('您新增了一個商品!')
+                        // this.showNotification('您新增了一個商品!')
+
+                        this.showToast('您新增了一個商品!')
                     }
                 }
             },
@@ -189,6 +207,9 @@
                 },
                 showNotification(message){
                     alert(message)
+                },
+                showToast(message){
+                    this.toasts.push(message)
                 }
             },
             computed:{
