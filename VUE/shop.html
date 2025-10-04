@@ -89,6 +89,7 @@
                 padding-inline: 30px;
                 width: 400px;
                 height: 100vh;
+                overflow-y: auto;
                 background-color: #FFF2EF;
                 position: absolute;
                 right: 0;
@@ -195,21 +196,23 @@
                         <span>
                             $.{{p.price}}
                         </span>
-                        <a href="#" class="add_to_cart" @click="add_to_cart(p)">Add To Cart</a>
+                        <a href="#" class="add_to_cart" @click.prevent="add_to_cart(p)">Add To Cart</a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="toast-container" v-if="toasts.length > 0">
-            <div class="toast"  v-for="t of toasts">
-                <div class="toast-header">
-                    通知
-                    <i class="fa-solid fa-xmark" @click="removeToast(t.id)"></i>
+        <div class="toast-container">
+            <!-- <transition-group name="toast"> -->
+                <div class="toast"  v-for="t of toasts">
+                    <div class="toast-header">
+                        通知
+                        <i class="fa-solid fa-xmark" @click="removeToast(t.id)"></i>
+                    </div>
+                    <div class="toast-body">
+                        {{t.message}}
+                    </div>
                 </div>
-                <div class="toast-body">
-                    {{t.message}}
-                </div>
-            </div>
+            </transition-group>
         </div>
     </div>
     <script>
