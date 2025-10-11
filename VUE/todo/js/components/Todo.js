@@ -19,12 +19,8 @@ export default {
     },
     template:`
         <TodoCreate @addTodo="add_todo"></TodoCreate>
-        <TodoList :todos="todos"></TodoList>
-        <div>
-            {{completedTodos}}
-            <hr>
-            {{unCompletedTodos}}
-        </div>
+        <TodoList :todos="todos" :c_todos="completedTodos" :uc_todos="unCompletedTodos"></TodoList>
+        
     `,
     methods: {
         add_todo(data){

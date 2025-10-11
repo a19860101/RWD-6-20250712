@@ -1,14 +1,24 @@
 export default {
     template:`
+        <h2>已完成</h2>
         <ul>
-            <li v-for="todo of todos">
-                <input type="checkbox" v-model="todo.isCompleted">
-                {{todo.title}}
+            <li v-for="ctodo of c_todos">
+                <input type="checkbox" v-model="ctodo.isCompleted">
+                {{ctodo.title}}
+            </li>
+        </ul>
+        <h2>未完成</h2>
+        <ul>
+            <li v-for="uctodo of uc_todos">
+                <input type="checkbox" v-model="uctodo.isCompleted">
+                {{uctodo.title}}
             </li>
         </ul>
     `,
     // props:['todos']
     props: {
-        todos: Array
+        todos: Array,
+        c_todos: Array,
+        uc_todos: Array
     }
 }
