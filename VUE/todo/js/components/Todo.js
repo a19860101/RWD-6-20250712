@@ -37,6 +37,6 @@ export default {
         },
         unCompletedTodos(){
             return this.todos.filter(data => data.isCompleted == false)
-        }
+        },
     }
 }
