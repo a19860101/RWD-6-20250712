@@ -9,7 +9,7 @@ export default {
                 {
                     id: 1,
                     title: 'list 1',
-                    isCompleted: true
+                    isCompleted: false
                 }
             ]
         }
@@ -20,6 +20,11 @@ export default {
     template:`
         <TodoCreate @addTodo="add_todo"></TodoCreate>
         <TodoList :todos="todos"></TodoList>
+        <div>
+            {{completedTodos}}
+            <hr>
+            {{unCompletedTodos}}
+        </div>
     `,
     methods: {
         add_todo(data){
@@ -28,6 +33,14 @@ export default {
                 title: data,
                 isCompleted: false
             })
+        }
+    },
+    computed:{
+        completedTodos(){
+            return this.todos.filter(data => data.isCompleted == true)
+        },
+        unCompletedTodos(){
+            return this.todos.filter(data => data.isCompleted == false)
         }
     }
 }
