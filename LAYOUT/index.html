@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Hello World!!</title>
     <link rel="stylesheet" href="layout-1.css">
     <link rel="stylesheet" href="animate.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body>
+    <main id="app">
     <div class="progress"></div>
     <nav class="nav md-flex none">
         <a href="#" class="nav-logo">Logo</a>
@@ -45,77 +47,28 @@
     </header>
     <section id="about" class="relative">
         <div class="container grid mx-auto lg-grid-cols-3 md-grid-cols-2 grid-cols-1 g-2">
-            <div class="item flex flex-col g-1 view-fade-in">
-                <h2>title</h2>
+            <div class="item flex flex-col g-1 view-fade-in" v-for="about of abouts">
+                <h2>{{about.title}}</h2>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam praesentium dicta voluptates, minima rem architecto pariatur laboriosam exercitationem voluptatem reprehenderit!
+                    {{about.body}}
                 </p>
                 <a href="#" class='btn btn-red'>More</a>
             </div>
-            <div class="item flex flex-col g-1 view-fade-in">
-                <h2>title</h2>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam praesentium dicta voluptates, minima rem architecto pariatur laboriosam exercitationem voluptatem reprehenderit!
-                </p>
-                <a href="#" class='btn btn-red'>More</a>
-            </div>
-            <div class="item flex flex-col g-1 view-fade-in">
-                <h2>title</h2>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam praesentium dicta voluptates, minima rem architecto pariatur laboriosam exercitationem voluptatem reprehenderit!
-                </p>
-                <a href="#" class='btn btn-red'>More</a>
-            </div>
+            
         </div>
     </section>
     <section id="blog" class="relative">
         <div class="container mx-auto grid lg-grid-cols-4 md-grid-cols-2 grid-cols-1 g-2">
-            <div class="item flex flex-col g-1">
+            <div class="item flex flex-col g-1" v-for="blog of blogs">
                 <div class="blog-img">
-                    <img src="https://picsum.photos/id/21/800/600" class="cover ratio-43" alt="">
+                    <img :src="blog.cover" class="cover ratio-43" alt="">
                 </div>
                 <div class="blog-content flex flex-col g-1">
-                    <h3>title</h3>
+                    <h3>{{blog.title}}</h3>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, reiciendis.
+                        {{blog.body}}
                     </p>
-                    <a href="#" class="btn btn-blue">Link</a>
-                </div>
-            </div>
-            <div class="item flex flex-col g-1">
-                <div class="blog-img">
-                    <img src="https://picsum.photos/id/21/800/600" class="cover ratio-43" alt="">
-                </div>
-                <div class="blog-content flex flex-col g-1">
-                    <h3>title</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, reiciendis.
-                    </p>
-                    <a href="#" class="btn btn-blue">Link</a>
-                </div>
-            </div>
-            <div class="item flex flex-col g-1">
-                <div class="blog-img">
-                    <img src="https://picsum.photos/id/21/800/600" class="cover ratio-43" alt="">
-                </div>
-                <div class="blog-content flex flex-col g-1">
-                    <h3>title</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, reiciendis.
-                    </p>
-                    <a href="#" class="btn btn-blue">Link</a>
-                </div>
-            </div>
-            <div class="item flex flex-col g-1">
-                <div class="blog-img">
-                    <img src="https://picsum.photos/id/21/800/600" class="cover ratio-43" alt="">
-                </div>
-                <div class="blog-content flex flex-col g-1">
-                    <h3>title</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, reiciendis.
-                    </p>
-                    <a href="#" class="btn btn-blue">Link</a>
+                    <a :href="blog.url" class="btn btn-blue">Link</a>
                 </div>
             </div>
         </div>
@@ -270,5 +223,59 @@
             Design By XXX.
         </div>
     </footer>
+    </main>
+    <script>
+        Vue.createApp({
+            data(){
+                return {
+                    abouts:[
+                        {
+                            title: 'title 1',
+                            body: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam praesentium dicta voluptates, minima rem architecto pariatur laboriosam exercitationem voluptatem reprehenderit!',
+                            url: '#'
+                        },
+                        {
+                            title: 'title 2',
+                            body: 'Lorem ipsum dolor sit amet consectetur, adipisicidam praesentium dicta voluptates, minima rem architecto pariatur laboriosam exercitationem voluptatem reprehenderit!',
+                            url: '#'
+                        },
+                        {
+                            title: 'title 3',
+                            body: 'Lorem ipsum dolor sit amet consectetur, adipisicxercitationem voluptatem reprehenderit!',
+                            url: '#'
+                        },
+                    ],
+                    blogs:[
+                        {
+                            title: 'title 1',
+                            body: 'Lorem ipsum dolor sit amet consectetur, adipisicxercitationem voluptatem reprehenderit!',
+                            cover: 'https://picsum.photos/id/21/800/600',
+                            url: '#'
+                        },
+                        {
+                            title: 'title 2',
+                            body: 'Lorem ipsum dolor sit amet consectetur, adipisicxercitationem voluptatem reprehenderit!',
+                            cover: 'https://picsum.photos/id/45/800/600',
+                            url: '#'
+                        },
+                        {
+                            title: 'title 3',
+                            body: 'Lorem ipsum dolor sit amet consectetur, adipisicxercitationem voluptatem reprehenderit!',
+                            cover: 'https://picsum.photos/id/33/800/600',
+                            url: '#'
+                        },
+                        {
+                            title: 'title 4',
+                            body: 'Lorem ipsum dolor sit amet consectetur, adipisicxercitationem voluptatem reprehenderit!',
+                            cover: 'https://picsum.photos/id/98/800/600',
+                            url: '#'
+                        },
+                        
+                    ]
+                }
+            }
+        }).mount('#app')
+          
+    </script>
 </body>
 </html>
